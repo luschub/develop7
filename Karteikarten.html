@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <title>Karteikarten – Kapitel 7: Fortgeschrittene Fragen der Unternehmensbewertung</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2em;
+      line-height: 1.5;
+    }
+    h1 {
+      color: #003366;
+    }
+    .karte {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 1em;
+      margin-bottom: 1em;
+    }
+    .karte h2 {
+      margin-top: 0;
+      color: #005599;
+    }
+    .front, .back {
+      margin-bottom: 0.5em;
+    }
+    .back pre {
+      background-color: #f4f4f4;
+      padding: 0.5em;
+      border-radius: 4px;
+      overflow-x: auto;
+    }
+    ul, ol {
+      margin-left: 1.5em;
+    }
+  </style>
+</head>
+<body>
+  <h1>Karteikarten – Kapitel 7: Fortgeschrittene Fragen der Unternehmensbewertung</h1>
+
+  <div class="karte">
+    <h2>Karteikarte 1: Äquivalenzprinzip</h2>
+    <div class="front">
+      <p><strong>Vorderseite:</strong> Was besagt das Äquivalenzprinzip bei der Basiszinssatz-Ermittlung?</p>
+    </div>
+    <div class="back">
+      <p><strong>Rückseite:</strong></p>
+      <ul>
+        <li>Risikoäquivalenz: Gleiche Risikostruktur zwischen Investition und Alternative</li>
+        <li>Laufzeitäquivalenz: Gleiche Laufzeit zwischen Investition und Alternative</li>
+        <li>Währungsäquivalenz: Gleiche Währung zwischen Investition und Alternative</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="karte">
+    <h2>Karteikarte 2: Risikoäquivalenz-Problem</h2>
+    <div class="front">
+      <p><strong>Vorderseite:</strong> Welche Probleme entstehen bei der Risikoäquivalenz in der Praxis?</p>
+    </div>
+    <div class="back">
+      <p><strong>Rückseite:</strong></p>
+      <ul>
+        <li>Schwierigkeit, tatsächlich sichere Investitionsalternativen zu finden</li>
+        <li>Staatsanleihen von Hochrisikostaaten enthalten Risikoaufschläge</li>
+        <li>Kapitalmarktsperren verhindern Auslandsanlagen</li>
+        <li>Währungsäquivalenz kann nicht eingehalten werden</li>
+        <li>Frage: Was tun, wenn kein Staat mehr als risikolos gilt?</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="karte">
+    <h2>Karteikarte 3: Laufzeitäquivalenz-Problem</h2>
+    <div class="front">
+      <p><strong>Vorderseite:</strong> Was ist das Problem der Laufzeitäquivalenz?</p>
+    </div>
+    <div class="back">
+      <p><strong>Rückseite:</strong></p>
+      <ul>
+        <li>Unternehmensbewertung arbeitet mit unendlichen Planungshorizonten</li>
+        <li>Am Kapitalmarkt gibt es keine derart langlebigen Investitionsalternativen</li>
+        <li>Fraglich, ob Extrapolation kurzfristiger Anlagerenditen für langfristige Bewertungen statthaft ist</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="karte">
+    <h2>Karteikarte 4: Renditeberechnung Staatsanleihen</h2>
+    <div class="front">
+      <p><strong>Vorderseite:</strong> Wie wird die Rendite von Staatsanleihen berechnet?</p>
+    </div>
+    <div class="back">
+      <p><strong>Rückseite:</strong></p>
+      <p>Die Rendite ist der interne Zinsfuß der Zahlungsreihe:</p>
+      <pre>Nennwert × Kurs + Stückzinsen = Σ(Kupon_t + Rückzahlung_t)/(1+r)^t</pre>
+      <ul>
+        <li>Lösung nur bis 2 Perioden direkt möglich</li>
+        <li>Für längere Laufzeiten: Näherungsalgorithmen (Regula Falsi/Sekantenverfahren)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="karte">
+    <h2>Karteikarte 5: Renditestruktur vs. Zero Curve</h2>
+    <div class="front">
+      <p><strong>Vorderseite:</strong> Was ist der Unterschied zwischen Renditestruktur und Zero Curve?</p>
+    </div>
+    <div class="back">
+      <p><strong>Rückseite:</strong></p>
+      <ul>
+        <li>Renditestruktur: Gegenüberstellung von Laufzeit und Rendite aller Staatsanleihen</li>
+        <li>Zero Curve: Zinsstruktur basierend ausschließlich auf Nullkuponanleihen</li>
+        <li>Problem: Nicht genügend Nullkuponanleihen am Markt verfügbar</li>
+        <li>Lösung: Bootstrapping-Verfahren zur Umrechnung</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="karte">
+    <h2>Karteikarte 6: Bootstrapping-Verfahren</h2>
+    <div class="front">
+      <p><strong>Vorderseite:</strong> Wie funktioniert das Bootstrapping-Verfahren?</p>
+    </div>
+    <div class="back">
+      <p><strong>Rückseite:</strong></p>
+      <ol>
+        <li>Kupons als selbstständige Zahlungsströme betrachten</li>
+        <li>Beginnen mit einjährigen Anleihen (Spot-Rate r₀,₁)</li>
+        <li>Schrittweise Ermittlung längerer Spot-Rates</li>
+        <li>Verwendung des Zusammenhangs Spot-/Forward-Zinssatz</li>
+        <li>Ergebnis: Bondkurve mit Spot-Rates für alle Laufzeiten</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="karte">
+    <h2>Karteikarte 7: Zinsswaps Grundlagen</h2>
+    <div class="front">
+      <p><strong>Vorderseite:</strong> Was sind Zinsswaps und wie funktionieren sie?</p>
+    </div>
+    <div class="back">
+      <p><strong>Rückseite:</strong></p>
+      <ul>
+        <li>Derivative Finanzinstrumente zur Zinsabsicherung</li>
+        <li>Gegenseitige Kreditgewährung zwischen zwei Parteien:</li>
+        <ul>
+          <li>Partei A: Festzinskredit an B</li>
+          <li>Partei B: Variabel verzinslicher Kredit an A</li>
+        </ul>
+        <li>Kein Kapitalaustausch, nur Zinszahlungen</li>
+        <li>Umwandlung Festzins ↔ variabler Zins</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="karte">
+    <h2>Karteikarte 8: Swap-Kurve vs. Government Curve</h2>
+    <div class="front">
+      <p><strong>Vorderseite:</strong> Welche Risiken haben Zinsswaps und wie unterscheidet sich die Swap-Kurve?</p>
+    </div>
+    <div class="back">
+      <p><strong>Rückseite:</strong></p>
+      <ul>
+        <li>Kein Kreditausfallrisiko (kein Kapitalaustausch)</li>
+        <li>Kontrahentenrisiko: Verlust des positiven Marktwerts bei Ausfall</li>
+        <li>Swap-Kurve liegt höher als Government/Sovereign-Curve</li>
+        <li>Grund: Kontrahentenrisiko + hohe Beliebtheit von Staatsanleihen</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="karte">
+    <h2>Karteikarte 9: Nelson/Siegel-Modell</h2>
+    <div class="front">
+      <p><strong>Vorderseite:</strong> Wie lautet die Nelson/Siegel-Formel und wofür wird sie verwendet?</p>
+    </div>
+    <div class="back">
+      <p><strong>Rückseite:</strong></p>
+      <p><strong>Formel:</strong> <code>r(T) = β₀ + β₁[(1-e^(-T/τ₁))/(T/τ₁)] + β₂[(1-e^(-T/τ₁))/(T/τ₁) - e^(-T/τ₁)]</code></p>
+      <p><strong>Verwendung:</strong></p>
+      <ul>
+        <li>Anpassung mathematischer Funktionen an Zinsstrukturdaten</li>
+        <li>Methode der kleinsten Quadrate (Regression)</li>
+        <li>Flexible Abbildung verschiedener Zinsstrukturverläufe</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="karte">
+    <h2>Karteikarte 10: Svensson-Erweiterung</h2>
+    <div class="front">
+      <p><strong>Vorderseite:</strong> Was ist die Svensson-Erweiterung und welche Vorteile bietet sie?</p>
+    </div>
+    <div class="back">
+      <p><strong>Rückseite:</strong></p>
+      <ul>
+        <li>Erweiterung des Nelson/Siegel-Modells um zusätzlichen Summanden</li>
+        <li>6 Parameter: β₀, β₁, β₂, β₃, τ₁, τ₂</li>
+        <li>Vorteile:</li>
+        <ul>
+          <li>Darstellung s-förmiger Zinsstrukturverläufe möglich</li>
+          <li>Bessere Teststatistiken</li>
+          <li>Verwendung durch die Deutsche Bundesbank</li>
+          <li>β₀ = Konvergenzwert für T → ∞</li>
+        </ul>
+      </ul>
+    </div>
+  </div>
+
+  <div class="karte">
+    <h2>Karteikarte 11: IDW-Anpassungen</h2>
+    <div class="front">
+      <p><strong>Vorderseite:</strong> Welche Anpassungen schlägt das IDW für die Zinsstruktur vor?</p>
+    </div>
+    <div class="back">
+      <p><strong>Rückseite:</strong></p>
+      <ol>
+        <li>Glättung: 3-Monats-Mittelwertbildung der Bundesbank-Parameter</li>
+        <li>Vereinfachung: Ableitung eines einheitlichen Basiszinssatzes</li>
+        <li>Verfahren: Typisierte Zahlungsreihe mit Zinsstruktur abzinsen → interner Zinsfuß</li>
+        <li>Kritik: Übergewichtung langfristiger, ungenauer Zinssätze</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="karte">
+    <h2>Karteikarte 12: Vor- und Nachteile IDW-Verfahren</h2>
+    <div class="front">
+      <p><strong>Vorderseite:</strong> Was sind die Vor- und Nachteile des IDW-Verfahrens?</p>
+    </div>
+    <div class="back">
+      <p><strong>Rückseite:</strong></p>
+      <p><strong>Vorteile:</strong></p>
+      <ul>
+        <li>Weitestgehend verzerrungsfreie Zinsstrukturkurve</li>
+        <li>Vereinfachte Anwendung durch einheitlichen Basiszinssatz</li>
+      </ul>
+      <p><strong>Nachteile:</strong></p>
+      <ul>
+        <li>Nicht taggenau (Ø 1,5 Monate alt)</li>
+        <li>Übergewichtung langfristiger Zinssätze</li>
+        <li>Verzerrung der Detailplanungsphase</li>
+        <li>Besserer Ansatz: Periodenspezifische Zinssätze in der Detailplanung</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="karte">
+    <h2>Karteikarte 13: Zinsstrukturkurven-Verläufe</h2>
+    <div class="front">
+      <p><strong>Vorderseite:</strong> Welche verschiedenen Verläufe kann die Zinsstrukturkurve haben?</p>
+    </div>
+    <div class="back">
+      <p><strong>Rückseite:</strong></p>
+      <ul>
+        <li>Normal: Steigend mit der Laufzeit (häufigster Fall)</li>
+        <li>Flach: Konstante Zinssätze über alle Laufzeiten</li>
+        <li>Invers: Fallend mit der Laufzeit</li>
+        <li>S-förmig: Kombination aus steigenden und fallenden Abschnitten</li>
+        <li>Buckel: Zunächst steigend, dann fallend</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="karte">
+    <h2>Karteikarte 14: Regula Falsi/Sekantenverfahren</h2>
+    <div class="front">
+      <p><strong>Vorderseite:</strong> Wann und warum wird das Sekantenverfahren verwendet?</p>
+    </div>
+    <div class="back">
+      <p><strong>Rückseite:</strong></p>
+      <p><strong>Verwendung:</strong> Bei Renditeberechnung von Anleihen mit Laufzeit > 2 Perioden</p>
+      <p><strong>Grund:</strong></p>
+      <ul>
+        <li>Polynom 3. oder höheren Grades nicht direkt lösbar</li>
+        <li>Näherungsalgorithmus für interne Zinsfußberechnung</li>
+        <li>Funktioniert bei maximal einem Vorzeichenwechsel der Zahlungsreihe</li>
+        <li>Bei Anleihen normalerweise gegeben</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="karte">
+    <h2>Karteikarte 15: Opportunitätskosten und Basiszinssatz</h2>
+    <div class="front">
+      <p><strong>Vorderseite:</strong> Welche Rolle spielt der Basiszinssatz als Teil der Opportunitätskosten?</p>
+    </div>
+    <div class="back">
+      <p><strong>Rückseite:</strong></p>
+      <ul>
+        <li>Basiszinssatz = Teil der Opportunitätskosten der Investoren</li>
+        <li>Unterliegt dem Äquivalenzprinzip</li>
+        <li>Repräsentiert die beste alternative Verwendung des Kapitals</li>
+        <li>Grundlage für die Diskontierung zukünftiger Zahlungsströme</li>
+        <li>Muss risiko-, laufzeit- und währungsäquivalent sein</li>
+      </ul>
+    </div>
+  </div>
+
+</body>
+</html>
