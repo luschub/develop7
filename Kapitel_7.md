@@ -281,8 +281,13 @@ Gehen Sie dabei folgendermaßen vor:
 •Besorgen Sie sich die Parameter des Svensson-Modells von der Internetpräsenz
 der Deutschen Bundesbank. Nutzen Sie die Zeitreihe der letzten drei Monate bzw.
 60  Tage.
+--->>>> erledigt
+
 •Berechnen Sie mittels der Parameter für alle 60  Tage jeweils die gültigen Zinssä-
 tze für die Laufzeiten von einem Jahr bis 250  Jahre.
+--->>>> aktuelle Bearbeitungsphase
+--->>> in der Auswertungsdatei die Berechnung checken!!
+
 •Errechnen Sie den Mittelwert der Zinssätze für jede Laufzeit von einem Jahr bis
 250  Jahre.
 •Rechnen sie den Zinssatz jeder Laufzeit von stetigen in diskrete Renditen um.

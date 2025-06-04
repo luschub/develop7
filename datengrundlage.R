@@ -1,7 +1,8 @@
+library(openxlsx)
 library(dplyr)
 
 # Ordnerpfad und Dateinamen
-folder <- "C:/Users/SchubbertLu/Downloads"
+folder <- "/Users/lutzschubbert/dev7/develop7"
 file_names <- c(
   "BBSIS.D.I.ZST.B0.EUR.S1311.B.A604._Z.R.A.A._Z._Z.A.csv",
   "BBSIS.D.I.ZST.B1.EUR.S1311.B.A604._Z.R.A.A._Z._Z.A.csv",
@@ -32,7 +33,7 @@ read_param_file <- function(filepath, new_colname) {
     df$Datum <- as.Date(df$Datum)
   }
   
-  # Überprüfen, ob mindestens 2 Spalten vorhanden sind; renenne dann die 2. Spalte
+  # Überprüfen, ob mindestens 2 Spalten vorhanden sind; benenne dann die 2. Spalte um
   if(ncol(df) < 2) {
     stop(paste("Die Datei", filepath, "hat weniger als 2 Spalten."))
   } else {
@@ -62,9 +63,25 @@ merged <- B0 %>%
 # Optional: Überprüfen, ob alle Werte der gleichen Datum-Zeile zugeordnet wurden
 print(head(merged))
 
-# Erzeugen des Ausgabedateinamens, z. B. "Svensson_2025-05-28.csv"
-output_file <- file.path(folder, paste0("Svensson_", Sys.Date(), ".csv"))
+# Erzeugen des Ausgabedateinamens, z.B. "Svensson_2025-05-28.xlsx"
+output_file <- file.path(folder, paste0("Svensson_", Sys.Date(), ".xlsx"))
 
-# Speichern der zusammengeführten Daten als CSV
-write.csv(merged, output_file, row.names = FALSE)
+# Speichern der zusammengeführten Daten als Excel-Datei
+write.xlsx(merged, output_file)
 cat("Datei wurde gespeichert als:", output_file, "\n")
+
+# Extrahiere Zeilen, in denen B0 nicht NA ist und nicht nur einen Punkt enthält, und nimm die letzten 60 Einträge
+# Sortiere den DataFrame nach Datum (aufsteigend) und filtere die Zeilen
+last_60 <- merged %>% 
+  filter(!is.na(B0) & B0 != ".") %>% 
+  arrange(Datum) %>% 
+  tail(60)
+
+# Erzeugen eines neuen Ausgabedateinamens, z.B. "Svensson_last60_2025-05-28.xlsx"
+output_file_last60 <- file.path(folder, paste0("Svensson_last60_", Sys.Date(), ".xlsx"))
+
+# Speichern der letzten 60 Einträge in der neuen Excel-Datei
+write.xlsx(last_60, output_file_last60)
+cat("Excel-Datei mit den letzten 60 Einträgen wurde gespeichert als:", output_file_last60, "\n")
+
+
