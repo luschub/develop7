@@ -290,7 +290,16 @@ tze für die Laufzeiten von einem Jahr bis 250  Jahre.
 
 •Errechnen Sie den Mittelwert der Zinssätze für jede Laufzeit von einem Jahr bis
 250  Jahre.
+
+
+
 •Rechnen sie den Zinssatz jeder Laufzeit von stetigen in diskrete Renditen um.
+
+
 •Stellen Sie die Kurve grafisch  dar.
+
+
 •Rechnen Sie die Laufzeiten der IDW-Empfehlung folgend in einen laufzeitunab-
 hängigen Basiszinssatz um.
+
+
