@@ -114,27 +114,52 @@
   .task h3 { margin: 0 0 .25rem 0; }
   .task p  { margin: 0; color: var(--text-light); }
   
-  /* Fortschrittsbalken --------------------------------------------------- */
-.progress-wrap{
+  /* Fortschrittsbalken */
+  /* Batterie-Container */
+.progress-wrap {
     position: relative;
-    height: .75rem;
+    height: 1rem; /* etwas höher für bessere Sichtbarkeit */
+    width: 100%;
     background: #e9ecef;
-    border-radius: var(--radius);
-    margin-bottom: var(--gap);
-    overflow: hidden;
-  }
-  #progressBar{
-    position: absolute; top:0; left:0; height:100%;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    margin-top: 20px;
+    margin-bottom: 2rem; /* Mehr Platz darunter */
+}
+
+/* Battery-Pin */
+.progress-wrap::after {
+    content: "";
+    position: absolute;
+    right: -6px;
+    top: 25%;
+    width: 6px;
+    height: 50%;
+    background: #ccc;
+    border-radius: 2px;
+}
+
+/* Batterie-Füllung */
+#progressBar {
+    height: 100%;
     background: var(--primary);
     width: 0;
-    transition: width .3s;
-  }
-  #progressText{
-    display:block;
-    margin-top:.25rem;
-    font-size:.85rem;
+    transition: width 0.3s;
+    /* Damit der innere Rand schön abgerundet ist, 
+       runde nur die linke Seite ab (rechts am Battery-Pin sollte es eckig bleiben) */
+    border-radius: 4px 0 0 4px;
+}
+
+/* Progress-Text unterhalb des Balkens positionieren */
+#progressText {
+    position: absolute;
+    bottom: -1.5rem; /* Dieser Wert kann je nach gewünschtem Abstand angepasst werden */
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 0.85rem;
     color: var(--text-light);
-  }
+}
   
   /* Sekundärer Button ---------------------------------------------------- */
   .secondary{

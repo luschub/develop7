@@ -23,6 +23,11 @@
           <li>Karteikarten</li>
         </ul>
       </nav>
+      <!-- Fortschrittsanzeige in der Sidebar -->
+      <div class="progress-wrap">
+        <div id="progressBar"></div>
+        <span id="progressText">0 / 3 erledigt</span>
+      </div>
     </aside>
 
     <!-- Hauptbereich -->
@@ -51,9 +56,6 @@
             <p>Kurze Beschreibung zu Aufgabe 1.</p>
           </div>
         </article>
-        <div class="collapsible-content" data-task="1" style="display: none;">
-          <p>Aufklappbarer Text / zusätzliche Informationen zu Aufgabe 1.</p>
-        </div>
 
         <!-- Aufgabe 2 -->
         <article class="task" data-task="2">
@@ -63,9 +65,6 @@
             <p>Kurze Beschreibung zu Aufgabe 2.</p>
           </div>
         </article>
-        <div class="collapsible-content" data-task="2" style="display: none;">
-          <p>Aufklappbarer Text / zusätzliche Informationen zu Aufgabe 2.</p>
-        </div>
 
         <!-- Aufgabe 3 -->
         <article class="task" data-task="3">
@@ -75,11 +74,8 @@
             <p>Kurze Beschreibung zu Aufgabe 3.</p>
           </div>
         </article>
-        <div class="collapsible-content" data-task="3" style="display: none;">
-          <p>Aufklappbarer Text / zusätzliche Informationen zu Aufgabe 3.</p>
-        </div>
 
-        <!-- Weitere Aufgaben ... -->
+        <!-- Aufgabe 4 -->
         <article class="task" data-task="4">
           <span class="badge">4</span>
           <div class="task-body">
@@ -87,10 +83,8 @@
             <p>Kurze Beschreibung zu Aufgabe 4.</p>
           </div>
         </article>
-        <div class="collapsible-content" data-task="4" style="display: none;">
-          <p>Aufklappbarer Text / zusätzliche Informationen zu Aufgabe 4.</p>
-        </div>
 
+        <!-- Aufgabe 5 -->
         <article class="task" data-task="5">
           <span class="badge">5</span>
           <div class="task-body">
@@ -98,16 +92,15 @@
             <p>Kurze Beschreibung zu Aufgabe 5.</p>
           </div>
         </article>
-        <div class="collapsible-content" data-task="5" style="display: none;">
-          <p>Aufklappbarer Text / zusätzliche Informationen zu Aufgabe 5.</p>
-        </div>
       </section>
 
-      <!-- Fortschrittsanzeige und neuer Button im Hauptbereich -->
-      <div class="progress-wrap">
-        <div id="progressBar"></div>
-        <span id="progressText">0 / 3 erledigt</span>
-      </div>
+      <!-- Neuer aufklappbarer Bereich -->
+      <section class="extra-section">
+        <h2 class="collapsible-header" style="cursor: pointer;">Weitere Informationen</h2>
+        <div class="collapsible-body" style="display: none; padding: 0.5rem; background: #f9f9f9; border-top: 1px solid #ddd;">
+          <p>Hier stehen zusätzliche Informationen, die sich bei einem Klick öffnen oder schließen.</p>
+        </div>
+      </section>
       
     </main>
   </div>

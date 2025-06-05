@@ -6,15 +6,28 @@
 document.querySelectorAll('.task').forEach(task => {
   // Initialisiere den Klick-Zähler für jedes Task-Element
   task.clickCount = 0;
-  
+
   task.addEventListener('click', (event) => {
     // Verhindere, dass Klicks innerhalb des collapsible-Contents erneut verarbeitet werden
     if (event.target.closest('.collapsible-content') !== null) return;
-    
-    // Erhöhe den Klick-Zähler
-    task.clickCount++;
+
     const taskId = task.getAttribute('data-task');
     const content = document.querySelector(`.collapsible-content[data-task="${taskId}"]`);
+
+    // Falls die Aufgabe bereits als "done" markiert ist, setze den Ursprungszustand zurück
+    if (task.classList.contains('done')) {
+      task.classList.remove('done');
+      if (content) {
+        content.style.display = "none";
+      }
+      task.clickCount = 0;
+      updateProgress();
+      saveState();
+      return;
+    }
+
+    // Erhöhe den Klick-Zähler
+    task.clickCount++;
 
     if (task.clickCount === 1) {
       // Erster Klick: Öffne den ausklappbaren Container
@@ -22,8 +35,8 @@ document.querySelectorAll('.task').forEach(task => {
         content.style.display = "block";
       }
     } else if (task.clickCount === 2) {
-      // Zweiter Klick: Schließe den Container, markiere die Aufgabe als erledigt,
-      // update den Fortschritt und setze den Klick-Zähler zurück
+      // Zweiter Klick: Schließe den Container, markiere die Aufgabe als erledigt (done),
+      // update den Fortschritt und setze den Klick-Zähler zurück.
       if (content) {
         content.style.display = "none";
       }
@@ -44,7 +57,7 @@ document.getElementById('submitBtn')?.addEventListener('click', () => {
 const KEY = 'course_tasks_done';
 
 function saveState() {
-  const doneIds = [...document.querySelectorAll('.task.done')].map(t => t.dataset.task);
+  const doneIds = [...document.querySelectorAll('.task.done')].map(t => t.getAttribute('data-task'));
   localStorage.setItem(KEY, JSON.stringify(doneIds));
 }
 
@@ -73,8 +86,17 @@ document.addEventListener('DOMContentLoaded', () => {
     if (storedDone.includes(task.getAttribute('data-task'))) {
       task.classList.add('done');
     }
-    // Optional: Falls Du auch die collapsible-Contents entsprechend initialisieren möchtest,
-    // kannst Du hier prüfen, ob sie geöffnet sein sollen.
   });
   updateProgress();
+});
+
+document.querySelectorAll('.collapsible-header').forEach(header => {
+  header.addEventListener('click', () => {
+    const body = header.nextElementSibling;
+    if (body.style.display === "none" || body.style.display === "") {
+      body.style.display = "block";
+    } else {
+      body.style.display = "none";
+    }
+  });
 });
