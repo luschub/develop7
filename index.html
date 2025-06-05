@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Kursaufgabe: Webentwicklung</title>
+  <!-- Schrift & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+    <!-- Seitenleiste -->
+    <aside class="sidebar">
+      <h1 class="logo">FHK BWLM 13 S25</h1>
+      <nav>
+        <ul>
+          <li class="active">home</li>
+          <li>Aufgabe</li>
+          <li>Glossar</li>
+          <li>Karteikarten</li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Hauptbereich -->
+    <main class="content">
+      <header class="content-header">
+        <h1>Unternehmensbewertung und wertorientierte Unternehmensführung</h1>
+      </header>
+
+      <p>Develop-Aufgabe 7</p>
+      <p>Lutz Schubbert</p>
+      <p>10.6.2025</p>
+      
+      <h2>Aufgabe</h2>
+      <p>Leiten Sie den aktuell gültigen Basiszinssatz nach den Empfehlungen des IDW her.</p>
+
+      <h2>Teilaufgaben</h2>
+
+      <!-- Aufgabenbereich -->
+      <section class="tasks">
+
+        <!-- Aufgabe 1 -->
+        <article class="task" data-task="1">
+          <span class="badge">1</span>
+          <div class="task-body">
+            <h3>Aufgabe 1 Titel</h3>
+            <p>Kurze Beschreibung zu Aufgabe 1.</p>
+          </div>
+        </article>
+        <div class="collapsible-content" data-task="1" style="display: none;">
+          <p>Aufklappbarer Text / zusätzliche Informationen zu Aufgabe 1.</p>
+        </div>
+
+        <!-- Aufgabe 2 -->
+        <article class="task" data-task="2">
+          <span class="badge">2</span>
+          <div class="task-body">
+            <h3>Aufgabe 2 Titel</h3>
+            <p>Kurze Beschreibung zu Aufgabe 2.</p>
+          </div>
+        </article>
+        <div class="collapsible-content" data-task="2" style="display: none;">
+          <p>Aufklappbarer Text / zusätzliche Informationen zu Aufgabe 2.</p>
+        </div>
+
+        <!-- Aufgabe 3 -->
+        <article class="task" data-task="3">
+          <span class="badge">3</span>
+          <div class="task-body">
+            <h3>Aufgabe 3 Titel</h3>
+            <p>Kurze Beschreibung zu Aufgabe 3.</p>
+          </div>
+        </article>
+        <div class="collapsible-content" data-task="3" style="display: none;">
+          <p>Aufklappbarer Text / zusätzliche Informationen zu Aufgabe 3.</p>
+        </div>
+
+        <!-- Weitere Aufgaben ... -->
+        <article class="task" data-task="4">
+          <span class="badge">4</span>
+          <div class="task-body">
+            <h3>Aufgabe 4 Titel</h3>
+            <p>Kurze Beschreibung zu Aufgabe 4.</p>
+          </div>
+        </article>
+        <div class="collapsible-content" data-task="4" style="display: none;">
+          <p>Aufklappbarer Text / zusätzliche Informationen zu Aufgabe 4.</p>
+        </div>
+
+        <article class="task" data-task="5">
+          <span class="badge">5</span>
+          <div class="task-body">
+            <h3>Aufgabe 5 Titel</h3>
+            <p>Kurze Beschreibung zu Aufgabe 5.</p>
+          </div>
+        </article>
+        <div class="collapsible-content" data-task="5" style="display: none;">
+          <p>Aufklappbarer Text / zusätzliche Informationen zu Aufgabe 5.</p>
+        </div>
+      </section>
+
+      <!-- Fortschrittsanzeige und neuer Button im Hauptbereich -->
+      <div class="progress-wrap">
+        <div id="progressBar"></div>
+        <span id="progressText">0 / 3 erledigt</span>
+      </div>
+      
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

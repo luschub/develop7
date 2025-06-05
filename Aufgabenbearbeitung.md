@@ -14,8 +14,7 @@ der Deutschen Bundesbank. Nutzen Sie die Zeitreihe der letzten drei Monate bzw.
 -> Beschreibung: 
 
 #### 02 Aufgabe
-Berechnen Sie mittels der Parameter für alle 60  Tage jeweils die gültigen Zinssä-
-tze für die Laufzeiten von einem Jahr bis 250  Jahre.
+Berechnen Sie mittels der Parameter für alle 60  Tage jeweils die gültigen Zinssätze für die Laufzeiten von einem Jahr bis 250  Jahre.
 --->>>> aktuelle Bearbeitungsphase
 --->>> in der Auswertungsdatei die Berechnung checken!!
 

@@ -1,0 +1,172 @@
+/* Grundlegende Variablen */
+:root {
+    --primary: #0d6efd;
+    --bg-light: #f8f9fa;
+    --text: #212529;
+    --text-light: #6c757d;
+    --radius: 8px;
+    --gap: 1.5rem;
+    font-family: 'Inter', system-ui, sans-serif;
+    color: var(--text);
+  }
+  
+  *,
+  *::before,
+  *::after { box-sizing: border-box; }
+  
+  body {
+    margin: 0;
+    background: var(--bg-light);
+  }
+  
+  /* Gesamtes Layout */
+  .page {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  /* Seitenleiste */
+  .sidebar {
+    width: 240px;
+    background: #fff;
+    border-right: 1px solid #e4e7ea;
+    padding: var(--gap);
+    flex-shrink: 0;
+  }
+  
+  .logo {
+    margin: 0 0 var(--gap) 0;
+    font-size: 1.3rem;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar li {
+    padding: .5rem 0;
+    cursor: pointer;
+  }
+  
+  .sidebar li.active {
+    font-weight: 600;
+    color: var(--primary);
+  }
+  
+  /* Hauptinhalt */
+  .content {
+    flex: 1;
+    padding: var(--gap);
+  }
+  
+  .content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--gap);
+  }
+  
+  .primary {
+    background: var(--primary);
+    color: #fff;
+    border: 0;
+    padding: .5rem 1rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+  }
+  
+  .primary:hover { opacity: .9; }
+  
+  /* Aufgabenliste */
+  .tasks {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+  }
+  
+  .task {
+    display: flex;
+    gap: var(--gap);
+    background: #fff;
+    border-radius: var(--radius);
+    box-shadow: 0 1px 3px rgba(0,0,0,.05);
+    padding: 1rem;
+    align-items: flex-start;
+    transition: background .2s;
+  }
+  
+  .task.done { opacity: .45; }
+  
+  .badge {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #fff;
+    font-weight: 600;
+    display: grid;
+    place-content: center;
+    flex-shrink: 0;
+  }
+  
+  .task h3 { margin: 0 0 .25rem 0; }
+  .task p  { margin: 0; color: var(--text-light); }
+  
+  /* Fortschrittsbalken --------------------------------------------------- */
+.progress-wrap{
+    position: relative;
+    height: .75rem;
+    background: #e9ecef;
+    border-radius: var(--radius);
+    margin-bottom: var(--gap);
+    overflow: hidden;
+  }
+  #progressBar{
+    position: absolute; top:0; left:0; height:100%;
+    background: var(--primary);
+    width: 0;
+    transition: width .3s;
+  }
+  #progressText{
+    display:block;
+    margin-top:.25rem;
+    font-size:.85rem;
+    color: var(--text-light);
+  }
+  
+  /* Sekundärer Button ---------------------------------------------------- */
+  .secondary{
+    margin-top: var(--gap);
+    background: transparent;
+    border: 2px dashed var(--primary);
+    color: var(--primary);
+    padding:.5rem 1rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+  }
+  .secondary:hover{ background: rgba(13,110,253,.05); }
+  
+  /* Kleinigkeit: erledigte Aufgabe leicht durchgestrichen */
+  .task.done h3{ text-decoration: line-through; }
+  
+  /* Responsives Verhalten */
+  @media (max-width: 768px) {
+    .page {
+      flex-direction: column;
+    }
+  
+    .sidebar {
+      width: 100%;
+      border-right: none;
+      border-bottom: 1px solid #e4e7ea;
+    }
+  }
+  
+  .collapsible-content {
+    padding: 0.5rem;
+    background: #f9f9f9;
+    border-top: 1px solid #ddd;
+    font-size: 0.9rem;
+  }
