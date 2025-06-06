@@ -236,6 +236,64 @@ body {
   font-size: 0.9rem;
 }
 
+/* Verbesserter Container für extra-sections */
+.extra-section {
+  margin: var(--gap) 0;                      /* Abstand oben und unten */
+  border: 1px solid #ddd;                    /* Dezenter Rahmen */
+  border-radius: var(--radius);              /* Abgerundete Ecken */
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);       /* Leichter Schatten */
+}
+
+/* Überschriften der extra-section: linksbündig, mit ansprechender Hintergrundfarbe und Icon */
+.collapsible-header {
+  text-align: left;              /* Text linksbündig */
+  background: #f1f1f1;
+  padding: 0.75rem 1rem;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+/* Styling für den grünen Nummernkreis */
+.collapsible-header .circle-number {
+  display: inline-block;
+  width: 1.5rem;              
+  height: 1.5rem;
+  line-height: 1.5rem;        
+  background-color: #28a745;  
+  color: #fff;                
+  border-radius: 50%;
+  text-align: center;
+  margin-right: 0.5rem;
+  font-weight: bold;
+}
+
+/* Füge ein Pfeilsymbol hinzu, das dreht */
+.collapsible-header::after {
+  content: "▼";                              /* Pfeil nach unten */
+  font-size: 0.75rem;
+  transition: transform 0.3s;
+}
+
+/* Bei aktivem Zustand dreht sich der Pfeil */
+.collapsible-header.active::after {
+  transform: rotate(-180deg);
+}
+
+/* Der Body, der zusätzliche Informationen enthält */
+.collapsible-body {
+  padding: 1rem;
+  background: #f9f9f9;
+  border-top: 1px solid #ddd;
+  display: none;                             /* Initial verborgen */
+  transition: max-height 0.3s ease;          /* Sanfte Transition */
+}
+
 /* =======================================================================
    Responsives Verhalten – Anpassungen für kleinere Bildschirme
    ======================================================================= */

@@ -124,12 +124,14 @@ document.addEventListener('DOMContentLoaded', () => {
 // der dazugehörige Inhalt (das direkte nächste Geschwisterelement) ein- oder ausgeblendet wird.
 document.querySelectorAll('.collapsible-header').forEach(header => {
   header.addEventListener('click', () => {
+    // Toggle den aktiven Zustand am Header (für die Icon-Drehung)
+    header.classList.toggle('active');
     const body = header.nextElementSibling;
-    // Falls der Body derzeit nicht angezeigt wird (display: none oder leer), zeige ihn an, ansonsten blende ihn aus.
-    if (body.style.display === "none" || body.style.display === "") {
-      body.style.display = "block";
-    } else {
+    // Toggle das Anzeigen des Inhalts
+    if (body.style.display === "block") {
       body.style.display = "none";
+    } else {
+      body.style.display = "block";
     }
   });
 });

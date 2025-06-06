@@ -123,15 +123,101 @@
 
       <!-- Information zu Aufgabe 1 -->
       <section class="extra-section">
-        <h2 class="collapsible-header" style="cursor: pointer;">Informationen zur 1. Aufgabe</h2>
+        <h2 class="collapsible-header" style="cursor: pointer; text-align: left;">
+          <span class="circle-number">1</span>
+          Informationen zur 1. Aufgabe
+        </h2>
         <div class="collapsible-body" style="display: none; padding: 0.5rem; background: #f9f9f9; border-top: 1px solid #ddd;">
-          <p>Zusätzliche Informationen oder Erläuterungen zur Bearbeitung der 1. Aufgabe.</p>
-        </div>
+          <section>
+            <h2>Mein Vorgehen</h2>
+            <p>Ich habe die Website der Deutschen Bundesbank besucht und dort die offiziellen Parameter des Svensson-Modells recherchiert und heruntergeladen.</p>
+            <p>Die von mir genutzte Quelle lautet:<br>
+              👉 <a href="https://www.bundesbank.de/de/statistiken/zeitreihen-datenbanken" target="_blank">https://www.bundesbank.de/de/statistiken/zeitreihen-datenbanken</a>
+            </p>
+            <p>Dort habe ich im Bereich <strong>"Zinsstrukturkurven / Svensson-Parameter"</strong> die entsprechenden Zeitreihen-Daten für die vergangenen <strong>60 Börsentage</strong> (Zeitraum ca. 3 Monate) identifiziert und als CSV-Dateien heruntergeladen.</p>
+            
+            <h3>Die verwendeten Dateien:</h3>
+            <ul>
+              <li>BBK01.WZ9810 : Parameter Beta0</li>
+              <li>BBK01.WZ9811 : Parameter Beta1</li>
+              <li>BBK01.WZ9812 : Parameter Beta2</li>
+              <li>BBK01.WZ9813 : Parameter Beta3</li>
+              <li>BBK01.WZ9814 : Parameter Lambda1</li>
+              <li>BBK01.WZ9815 : Parameter Lambda2</li>
+            </ul>
+            <p><em>(Optional: Hier könnte ein Screenshot der Download-Seite eingefügt werden.)</em></p>
+            
+            <h3>Datenverarbeitung:</h3>
+            <p>Zur systematischen Weiterverarbeitung der Daten habe ich ein R-Skript entwickelt, das:</p>
+            <ol>
+              <li>die heruntergeladenen Dateien automatisiert einliest,</li>
+              <li>die Parameterwerte für alle 60 Börsentage extrahiert und zusammenführt,</li>
+              <li>die Daten aufbereitet und in einer übersichtlichen Tabelle speichert.</li>
+            </ol>
+            
+            <p>Ergebnis ist die Datei:<br>
+              👉 <strong>svensson_parameters_prepared.csv</strong>
+            </p>
+            
+            <p>Diese Datei enthält für jeden der 60 Börsentage eine kommentierte Übersichtstabelle mit den Parametern β₀, β₁, β₂, β₃, λ₁, λ₂.</p>
+            
+            <h3>Beispielhafte Struktur der Übersichtstabelle:</h3>
+            <table border="1" cellpadding="5" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>Datum</th>
+                  <th>Beta0</th>
+                  <th>Beta1</th>
+                  <th>Beta2</th>
+                  <th>Beta3</th>
+                  <th>Lambda1</th>
+                  <th>Lambda2</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2025-03-01</td>
+                  <td>0.0173</td>
+                  <td>-0.011</td>
+                  <td>0.0025</td>
+                  <td>-0.0007</td>
+                  <td>2.5600</td>
+                  <td>9.8000</td>
+                </tr>
+                <tr>
+                  <td>2025-03-02</td>
+                  <td>0.0174</td>
+                  <td>-0.010</td>
+                  <td>0.0026</td>
+                  <td>-0.0008</td>
+                  <td>2.5700</td>
+                  <td>9.7500</td>
+                </tr>
+                <tr>
+                  <td>...</td>
+                  <td>...</td>
+                  <td>...</td>
+                  <td>...</td>
+                  <td>...</td>
+                  <td>...</td>
+                  <td>...</td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <h3>Zusammenfassung:</h3>
+            <p>Damit sind die <strong>Svensson-Parameter</strong> für die vergangenen <strong>60 Börsentage</strong> (ca. 3 Monate) vollständig erfasst und vorbereitet.<br>
+            Sie bilden die Datenbasis für die weiteren Berechnungen der Zinssätze im nächsten Schritt der Aufgabe.</p>
+          </section>
+                  </div>
       </section>
 
       <!-- Information zu Aufgabe 2 -->
       <section class="extra-section">
-        <h2 class="collapsible-header" style="cursor: pointer;">Informationen zur 2. Aufgabe</h2>
+        <h2 class="collapsible-header" style="cursor: pointer; text-align: left;">
+           <span class="circle-number">2</span>
+           Informationen zur 2. Aufgabe
+        </h2>
         <div class="collapsible-body" style="display: none; padding: 0.5rem; background: #f9f9f9; border-top: 1px solid #ddd;">
           <p>Zusätzliche Hinweise oder Erläuterungen zur 2. Aufgabe.</p>
         </div>
@@ -139,7 +225,10 @@
 
       <!-- Information zu Aufgabe 3 -->
       <section class="extra-section">
-        <h2 class="collapsible-header" style="cursor: pointer;">Informationen zur 3. Aufgabe</h2>
+        <h2 class="collapsible-header" style="cursor: pointer; text-align: left;">
+           <span class="circle-number">3</span>
+           Informationen zur 3. Aufgabe
+        </h2>
         <div class="collapsible-body" style="display: none; padding: 0.5rem; background: #f9f9f9; border-top: 1px solid #ddd;">
           <p>Weitere Informationen zur 3. Aufgabe finden Sie hier.</p>
         </div>
@@ -147,7 +236,10 @@
 
       <!-- Information zu Aufgabe 4 -->
       <section class="extra-section">
-        <h2 class="collapsible-header" style="cursor: pointer;">Informationen zur 4. Aufgabe</h2>
+        <h2 class="collapsible-header" style="cursor: pointer; text-align: left;">
+           <span class="circle-number">4</span>
+           Informationen zur 4. Aufgabe
+        </h2>
         <div class="collapsible-body" style="display: none; padding: 0.5rem; background: #f9f9f9; border-top: 1px solid #ddd;">
           <p>Hier erhalten Sie zusätzliche Erläuterungen zur 4. Aufgabe.</p>
         </div>
@@ -155,7 +247,10 @@
 
       <!-- Information zu Aufgabe 5 -->
       <section class="extra-section">
-        <h2 class="collapsible-header" style="cursor: pointer;">Informationen zur 5. Aufgabe</h2>
+        <h2 class="collapsible-header" style="cursor: pointer; text-align: left;">
+           <span class="circle-number">5</span>
+           Informationen zur 5. Aufgabe
+        </h2>
         <div class="collapsible-body" style="display: none; padding: 0.5rem; background: #f9f9f9; border-top: 1px solid #ddd;">
           <p>Zusätzlicher Kontext und Hinweise zur 5. Aufgabe.</p>
         </div>
@@ -163,7 +258,10 @@
 
       <!-- Information zu Aufgabe 6 -->
       <section class="extra-section">
-        <h2 class="collapsible-header" style="cursor: pointer;">Informationen zur 6. Aufgabe</h2>
+        <h2 class="collapsible-header" style="cursor: pointer; text-align: left;">
+           <span class="circle-number">6</span>
+           Informationen zur 6. Aufgabe
+        </h2>
         <div class="collapsible-body" style="display: none; padding: 0.5rem; background: #f9f9f9; border-top: 1px solid #ddd;">
           <p>Erläuterungen zur Bearbeitung der 6. Aufgabe finden Sie hier.</p>
         </div>
