@@ -21,7 +21,7 @@ Berechnen Sie mittels der Parameter für alle 60  Tage jeweils die gültigen Z
 
 #### 03 Aufgabe
 Errechnen Sie den Mittelwert der Zinssätze für jede Laufzeit von einem Jahr bis
-250  Jahre.
+250 Jahre.
 --->>> offen
 
 #### 04 Aufgabe

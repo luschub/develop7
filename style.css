@@ -1,197 +1,251 @@
-/* Grundlegende Variablen */
+/* =======================================================================
+   Grundlegende Variablen und Reset
+   ======================================================================= */
 :root {
-    --primary: #0d6efd;
-    --bg-light: #f8f9fa;
-    --text: #212529;
-    --text-light: #6c757d;
-    --radius: 8px;
-    --gap: 1.5rem;
-    font-family: 'Inter', system-ui, sans-serif;
-    color: var(--text);
-  }
-  
-  *,
-  *::before,
-  *::after { box-sizing: border-box; }
-  
-  body {
-    margin: 0;
-    background: var(--bg-light);
-  }
-  
-  /* Gesamtes Layout */
-  .page {
-    display: flex;
-    min-height: 100vh;
-  }
-  
-  /* Seitenleiste */
-  .sidebar {
-    width: 240px;
-    background: #fff;
-    border-right: 1px solid #e4e7ea;
-    padding: var(--gap);
-    flex-shrink: 0;
-  }
-  
-  .logo {
-    margin: 0 0 var(--gap) 0;
-    font-size: 1.3rem;
-  }
-  
-  .sidebar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .sidebar li {
-    padding: .5rem 0;
-    cursor: pointer;
-  }
-  
-  .sidebar li.active {
-    font-weight: 600;
-    color: var(--primary);
-  }
-  
-  /* Hauptinhalt */
-  .content {
-    flex: 1;
-    padding: var(--gap);
-  }
-  
-  .content-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: var(--gap);
-  }
-  
-  .primary {
-    background: var(--primary);
-    color: #fff;
-    border: 0;
-    padding: .5rem 1rem;
-    border-radius: var(--radius);
-    cursor: pointer;
-  }
-  
-  .primary:hover { opacity: .9; }
-  
-  /* Aufgabenliste */
-  .tasks {
-    display: flex;
-    flex-direction: column;
-    gap: var(--gap);
-  }
-  
-  .task {
-    display: flex;
-    gap: var(--gap);
-    background: #fff;
-    border-radius: var(--radius);
-    box-shadow: 0 1px 3px rgba(0,0,0,.05);
-    padding: 1rem;
-    align-items: flex-start;
-    transition: background .2s;
-  }
-  
-  .task.done { opacity: .45; }
-  
-  .badge {
-    height: 2rem;
-    width: 2rem;
-    border-radius: 50%;
-    background: var(--primary);
-    color: #fff;
-    font-weight: 600;
-    display: grid;
-    place-content: center;
-    flex-shrink: 0;
-  }
-  
-  .task h3 { margin: 0 0 .25rem 0; }
-  .task p  { margin: 0; color: var(--text-light); }
-  
-  /* Fortschrittsbalken */
-  /* Batterie-Container */
+  /* Definition zentraler Farbschemata und Abstände */
+  --primary: #0d6efd;      /* Primärfarbe, z. B. für Buttons und Icons */
+  --bg-light: #f8f9fa;     /* Heller Hintergrund für die Seite */
+  --text: #212529;         /* Standardtextfarbe */
+  --text-light: #6c757d;   /* Leicht gedämpfte Textfarbe */
+  --radius: 8px;          /* Allgemein verwendeter Border-Radius */
+  --gap: 1.5rem;          /* Standard-Abstand (Margin/Padding) */
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--text);
+}
+
+/* Box-Sizing-Reset: Alle Elemente inklusive Pseudoelemente beziehen ihren Padding/Borders */
+*,
+*::before,
+*::after { 
+  box-sizing: border-box; 
+}
+
+/* =======================================================================
+   Basisformatierung der Seite und Layout-Struktur
+   ======================================================================= */
+
+/* Seitenhintergrund und Margin-Reset */
+body {
+  margin: 0;
+  background: var(--bg-light);
+}
+
+/* Gesamtes Seitenlayout: Flex-Container, um Sidebar und Content nebeneinander anzuordnen */
+.page {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* =======================================================================
+   Sidebar – Linker Menübereich
+   ======================================================================= */
+.sidebar {
+  width: 240px;                        /* Feste Breite der Sidebar */
+  background: #fff;
+  border-right: 1px solid #e4e7ea;
+  padding: var(--gap);
+  flex-shrink: 0;
+}
+
+/* Logo in der Sidebar */
+.logo {
+  margin: 0 0 var(--gap) 0;
+  font-size: 1.3rem;
+}
+
+/* Navigationsliste ohne Standardaufzählungszeichen */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Navigationslisten-Elemente mit Padding und Hover-Effekt */
+.sidebar li {
+  padding: 0.5rem 0;
+  cursor: pointer;
+}
+
+/* Markiertes Navigationselement */
+.sidebar li.active {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* =======================================================================
+   Fortschrittsanzeige (Batterie-Design)
+   ======================================================================= */
+
+/* Container des Fortschrittsbalkens, der wie eine Batterie aussieht */
 .progress-wrap {
-    position: relative;
-    height: 1rem; /* etwas höher für bessere Sichtbarkeit */
-    width: 100%;
-    background: #e9ecef;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    margin-top: 20px;
-    margin-bottom: 2rem; /* Mehr Platz darunter */
+  position: relative;
+  height: 1rem; /* Höhe des Balkens, etwas höher für bessere Sichtbarkeit */
+  width: 100%;
+  background: #e9ecef;  /* heller Hintergrund als "leerer" Batteriezustand */
+  border: 2px solid #ccc;
+  border-radius: 4px;    /* Abrundung der linken Seite des Balkens */
+  margin-top: 20px;      /* Abstand zum oberen Inhalt */
+  margin-bottom: 2rem;   /* Mehr Platz darunter */
 }
 
-/* Battery-Pin */
+/* Pseudo-Element als "Battery-Pin" an der rechten Seite */
 .progress-wrap::after {
-    content: "";
-    position: absolute;
-    right: -6px;
-    top: 25%;
-    width: 6px;
-    height: 50%;
-    background: #ccc;
-    border-radius: 2px;
+  content: "";
+  position: absolute;
+  right: -6px;           /* leicht außerhalb des Containers */
+  top: 25%;
+  width: 6px;            /* Breite des Pins */
+  height: 50%;           /* Höhe relativ zum Container */
+  background: #ccc;
+  border-radius: 2px;
 }
 
-/* Batterie-Füllung */
+/* Füllung der "Batterie": Wird per JavaScript in der Breite angepasst */
 #progressBar {
-    height: 100%;
-    background: var(--primary);
-    width: 0;
-    transition: width 0.3s;
-    /* Damit der innere Rand schön abgerundet ist, 
-       runde nur die linke Seite ab (rechts am Battery-Pin sollte es eckig bleiben) */
-    border-radius: 4px 0 0 4px;
+  height: 100%;
+  background: var(--primary);
+  width: 0;                      /* Startwert: leer; wird dynamisch gefüllt */
+  transition: width 0.3s;          /* Weicher Übergang beim Füllen */
+  /* Abgerundete linke Seite, rechte Seite bleibt eckig, damit der Battery-Pin sichtbar bleibt */
+  border-radius: 4px 0 0 4px;
 }
 
-/* Progress-Text unterhalb des Balkens positionieren */
+/* Der Fortschrittstext, der den aktuellen Füllstand anzeigt */
+/* Wird absolut positioniert, damit er unterhalb des Balkens sichtbar ist */
 #progressText {
-    position: absolute;
-    bottom: -1.5rem; /* Dieser Wert kann je nach gewünschtem Abstand angepasst werden */
-    left: 0;
-    width: 100%;
-    text-align: center;
-    font-size: 0.85rem;
-    color: var(--text-light);
+  position: absolute;
+  bottom: -1.5rem;              /* Abstand unterhalb des Balkens anpassen */
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 0.85rem;           /* Leichte Reduzierung der Schriftgröße */
+  color: var(--text-light);
 }
-  
-  /* Sekundärer Button ---------------------------------------------------- */
-  .secondary{
-    margin-top: var(--gap);
-    background: transparent;
-    border: 2px dashed var(--primary);
-    color: var(--primary);
-    padding:.5rem 1rem;
-    border-radius: var(--radius);
-    cursor: pointer;
+
+/* =======================================================================
+   Hauptinhalt (Content) und Aufgabenliste
+   ======================================================================= */
+.content {
+  flex: 1;                     /* Füllt den restlichen Platz neben der Sidebar */
+  padding: var(--gap);
+}
+
+/* Header-Bereich des Inhalts */
+.content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--gap);
+}
+
+/* Primär-Button, z. B. für Aktionen */
+.primary {
+  background: var(--primary);
+  color: #fff;
+  border: 0;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.primary:hover { 
+  opacity: 0.9; 
+}
+
+/* =======================================================================
+   Aufgabenliste und einzelne Aufgaben
+   ======================================================================= */
+
+/* Container für alle Aufgaben */
+.tasks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+/* Einzelne Aufgabe: Flex-Layout für Badge und Inhalt */
+.task {
+  display: flex;
+  gap: var(--gap);
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  padding: 1rem;
+  align-items: flex-start;
+  transition: background 0.2s;
+}
+
+/* Aufgaben, die als erledigt markiert sind, erscheinen transparenter */
+.task.done { 
+  opacity: 0.45; 
+}
+
+/* Badge: Rundes Symbol mit Zahlenanzeige */
+.badge {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  display: grid;        /* Ermöglicht zentriertes Platzieren des Inhalts */
+  place-content: center;
+  flex-shrink: 0;
+}
+
+/* Kopfzeile in den Aufgaben (z. B. Titel) */
+.task h3 { 
+  margin: 0 0 0.25rem 0; 
+}
+
+/* Beschreibungstext innerhalb einer Aufgabe */
+.task p { 
+  margin: 0; 
+  color: var(--text-light); 
+}
+
+/* Bei erledigten Aufgaben: Titel durchgestrichen */
+.task.done h3 { 
+  text-decoration: line-through; 
+}
+
+/* =======================================================================
+   Sekundärer Button
+   ======================================================================= */
+.secondary {
+  margin-top: var(--gap);
+  background: transparent;
+  border: 2px dashed var(--primary);
+  color: var(--primary);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.secondary:hover { 
+  background: rgba(13,110,253, 0.05); 
+}
+
+/* =======================================================================
+   Zusätzliche, aufklappbare Bereiche (z. B. für extra Informationen)
+   ======================================================================= */
+.collapsible-content {
+  padding: 0.5rem;
+  background: #f9f9f9;
+  border-top: 1px solid #ddd;
+  font-size: 0.9rem;
+}
+
+/* =======================================================================
+   Responsives Verhalten – Anpassungen für kleinere Bildschirme
+   ======================================================================= */
+@media (max-width: 768px) {
+  .page {
+    flex-direction: column;
   }
-  .secondary:hover{ background: rgba(13,110,253,.05); }
-  
-  /* Kleinigkeit: erledigte Aufgabe leicht durchgestrichen */
-  .task.done h3{ text-decoration: line-through; }
-  
-  /* Responsives Verhalten */
-  @media (max-width: 768px) {
-    .page {
-      flex-direction: column;
-    }
-  
-    .sidebar {
-      width: 100%;
-      border-right: none;
-      border-bottom: 1px solid #e4e7ea;
-    }
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #e4e7ea;
   }
-  
-  .collapsible-content {
-    padding: 0.5rem;
-    background: #f9f9f9;
-    border-top: 1px solid #ddd;
-    font-size: 0.9rem;
-  }
+}

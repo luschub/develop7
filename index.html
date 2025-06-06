@@ -12,11 +12,12 @@
 </head>
 <body>
   <div class="page">
-    <!-- Seitenleiste -->
+    <!-- Sidebar: Enthält Logo, Navigation und Fortschrittsanzeige -->
     <aside class="sidebar">
-      <h1 class="logo">FHK BWLM 13 S25</h1>
+      <h1 class="logo">Kurs</h1>
       <nav>
         <ul>
+          <!-- Navigationseinträge -->
           <li class="active">home</li>
           <li>Aufgabe</li>
           <li>Glossar</li>
@@ -26,34 +27,47 @@
       <!-- Fortschrittsanzeige in der Sidebar -->
       <div class="progress-wrap">
         <div id="progressBar"></div>
-        <span id="progressText">0 / 3 erledigt</span>
+        <!-- Der Fortschrittstext wird hier unterhalb des Balkens angezeigt -->
+        <span id="progressText">0 / 6 erledigt</span>
       </div>
     </aside>
 
-    <!-- Hauptbereich -->
+    <!-- Hauptbereich: Enthält den Content der Seite -->
     <main class="content">
+      <!-- Header-Bereich -->
       <header class="content-header">
-        <h1>Unternehmensbewertung und wertorientierte Unternehmensführung</h1>
+        <h1>Unternehmensbewertung und wertorientierte Unternehmensführung (FHK BWLM 13 S25)</h1>
       </header>
 
-      <p>Develop-Aufgabe 7</p>
-      <p>Lutz Schubbert</p>
-      <p>10.6.2025</p>
+      <!-- Einleitung zur Develop-Aufgabe -->
+      <h2>Develop-Aufgabe 7</h2>
+      <p>Student: Lutz Schubbert</p>
+      <p>Präsentationsdatum: 10.6.2025</p>
       
+      <!-- Aufgabenbeschreibung -->
       <h2>Aufgabe</h2>
-      <p>Leiten Sie den aktuell gültigen Basiszinssatz nach den Empfehlungen des IDW her.</p>
+      <p>Leiten Sie den aktuell gültigen Basiszinssatz nach den Empfehlungen des IDW her. (vgl. Skript S. 194)</p>
 
-      <h2>Teilaufgaben</h2>
+      <!-- Beschreibung des Vorgehens -->
+      <h2>Vorgehen zur Bearbeitung der Develop-Aufgabe Nr. 7</h2>
+      <!-- Um Listeneinträge korrekt darzustellen, verwenden wir hier ein ungeordnetes Listen-Element -->
+      <p>Um die Aufgabe zu bearbeiten nutze ich folgende technische Infrastruktur:</p>
+      <ul>
+        <li>Github zur Ablage der relevanten Dateien und Codes</li>
+        <li>Visual Studio Code als Entwicklungsumgebung (IDE)</li>
+        <li>ChatGPT als inhaltlichen Sparringspartner und zur effizienten Code-Entwicklung innerhalb von VSC</li>
+      </ul>
 
-      <!-- Aufgabenbereich -->
+      <!-- Aufgabenbereich: Liste der Aufgaben -->
       <section class="tasks">
-
         <!-- Aufgabe 1 -->
         <article class="task" data-task="1">
+          <!-- Badge zeigt die Aufgabennummer -->
           <span class="badge">1</span>
           <div class="task-body">
-            <h3>Aufgabe 1 Titel</h3>
-            <p>Kurze Beschreibung zu Aufgabe 1.</p>
+            <h3>SVENSSON Parameter von der Bundesbank besorgen</h3>
+            <p>Besorgen Sie sich die Parameter des Svensson-Modells von der Internetpräsenz 
+              der Deutschen Bundesbank. Nutzen Sie die Zeitreihe der letzten drei Monate bzw. 60 Tage.</p>
           </div>
         </article>
 
@@ -61,8 +75,9 @@
         <article class="task" data-task="2">
           <span class="badge">2</span>
           <div class="task-body">
-            <h3>Aufgabe 2 Titel</h3>
-            <p>Kurze Beschreibung zu Aufgabe 2.</p>
+            <h3>Berechnung der Zinsstrukturkurve</h3>
+            <p>Berechnen Sie mittels der Parameter für alle 60 Tage jeweils die gültigen Zinssätze 
+              für die Laufzeiten von einem Jahr bis 250 Jahre.</p>
           </div>
         </article>
 
@@ -70,8 +85,8 @@
         <article class="task" data-task="3">
           <span class="badge">3</span>
           <div class="task-body">
-            <h3>Aufgabe 3 Titel</h3>
-            <p>Kurze Beschreibung zu Aufgabe 3.</p>
+            <h3>Mittelwertberechnung der Zinsstrukturkurve</h3>
+            <p>Errechnen Sie den Mittelwert der Zinssätze für jede Laufzeit von einem Jahr bis 250 Jahre.</p>
           </div>
         </article>
 
@@ -79,8 +94,8 @@
         <article class="task" data-task="4">
           <span class="badge">4</span>
           <div class="task-body">
-            <h3>Aufgabe 4 Titel</h3>
-            <p>Kurze Beschreibung zu Aufgabe 4.</p>
+            <h3>Umrechnung von stetig zu diskreten Renditen</h3>
+            <p>KRechnen Sie den Zinssatz jeder Laufzeit von stetigen in diskrete Renditen um.</p>
           </div>
         </article>
 
@@ -88,23 +103,75 @@
         <article class="task" data-task="5">
           <span class="badge">5</span>
           <div class="task-body">
-            <h3>Aufgabe 5 Titel</h3>
-            <p>Kurze Beschreibung zu Aufgabe 5.</p>
+            <h3>Grafische Darstellung (?)</h3>
+            <p>Stellen Sie die Kurve grafisch dar.</p>
+          </div>
+        </article>
+
+        <!-- Aufgabe 6 -->
+        <article class="task" data-task="6">
+          <span class="badge">6</span>
+          <div class="task-body">
+            <h3>Laufzeitunabhängiger Zinssatz (IDW)</h3>
+            <p>Rechnen Sie die Laufzeiten der IDW-Empfehlung folgend in einen laufzeitunabhängigen Basiszinssatz um.</p>
           </div>
         </article>
       </section>
 
-      <!-- Neuer aufklappbarer Bereich -->
+      <!-- Extra-Bereiche: Diese Sektionen enthalten zusätzliche, aufklappbare Informationen zu den Aufgaben -->
+      <!-- Jeder Bereich ist für eine Aufgabe vorgesehen. Beim Klick auf die Überschrift wird der Inhalt umgeschaltet. -->
+
+      <!-- Information zu Aufgabe 1 -->
       <section class="extra-section">
-        <h2 class="collapsible-header" style="cursor: pointer;">Weitere Informationen</h2>
+        <h2 class="collapsible-header" style="cursor: pointer;">Informationen zur 1. Aufgabe</h2>
         <div class="collapsible-body" style="display: none; padding: 0.5rem; background: #f9f9f9; border-top: 1px solid #ddd;">
-          <p>Hier stehen zusätzliche Informationen, die sich bei einem Klick öffnen oder schließen.</p>
+          <p>Zusätzliche Informationen oder Erläuterungen zur Bearbeitung der 1. Aufgabe.</p>
         </div>
       </section>
-      
+
+      <!-- Information zu Aufgabe 2 -->
+      <section class="extra-section">
+        <h2 class="collapsible-header" style="cursor: pointer;">Informationen zur 2. Aufgabe</h2>
+        <div class="collapsible-body" style="display: none; padding: 0.5rem; background: #f9f9f9; border-top: 1px solid #ddd;">
+          <p>Zusätzliche Hinweise oder Erläuterungen zur 2. Aufgabe.</p>
+        </div>
+      </section>
+
+      <!-- Information zu Aufgabe 3 -->
+      <section class="extra-section">
+        <h2 class="collapsible-header" style="cursor: pointer;">Informationen zur 3. Aufgabe</h2>
+        <div class="collapsible-body" style="display: none; padding: 0.5rem; background: #f9f9f9; border-top: 1px solid #ddd;">
+          <p>Weitere Informationen zur 3. Aufgabe finden Sie hier.</p>
+        </div>
+      </section>
+
+      <!-- Information zu Aufgabe 4 -->
+      <section class="extra-section">
+        <h2 class="collapsible-header" style="cursor: pointer;">Informationen zur 4. Aufgabe</h2>
+        <div class="collapsible-body" style="display: none; padding: 0.5rem; background: #f9f9f9; border-top: 1px solid #ddd;">
+          <p>Hier erhalten Sie zusätzliche Erläuterungen zur 4. Aufgabe.</p>
+        </div>
+      </section>
+
+      <!-- Information zu Aufgabe 5 -->
+      <section class="extra-section">
+        <h2 class="collapsible-header" style="cursor: pointer;">Informationen zur 5. Aufgabe</h2>
+        <div class="collapsible-body" style="display: none; padding: 0.5rem; background: #f9f9f9; border-top: 1px solid #ddd;">
+          <p>Zusätzlicher Kontext und Hinweise zur 5. Aufgabe.</p>
+        </div>
+      </section>
+
+      <!-- Information zu Aufgabe 6 -->
+      <section class="extra-section">
+        <h2 class="collapsible-header" style="cursor: pointer;">Informationen zur 6. Aufgabe</h2>
+        <div class="collapsible-body" style="display: none; padding: 0.5rem; background: #f9f9f9; border-top: 1px solid #ddd;">
+          <p>Erläuterungen zur Bearbeitung der 6. Aufgabe finden Sie hier.</p>
+        </div>
+      </section>
     </main>
   </div>
 
+  <!-- Einbindung der JavaScript-Datei, die u.a. das Toggle-Verhalten der aufklappbaren Bereiche implementiert -->
   <script src="app.js"></script>
 </body>
 </html>
