@@ -1,275 +1,406 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Kursaufgabe: Webentwicklung</title>
-  <!-- Schrift & Styles -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Kursaufgabe: Webentwicklung</title>
+    <!-- Schrift & Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="page">
-    <!-- Sidebar: Enthält Logo, Navigation und Fortschrittsanzeige -->
-    <aside class="sidebar">
-      <h1 class="logo">Kurs</h1>
-      <nav>
-        <ul>
-          <!-- Navigationseinträge -->
-          <li class="active">home</li>
-          <li>Aufgabe</li>
-          <li>Glossar</li>
-          <li>Karteikarten</li>
-        </ul>
-      </nav>
-      <!-- Fortschrittsanzeige in der Sidebar -->
-      <div class="progress-wrap">
-        <div id="progressBar"></div>
-        <!-- Der Fortschrittstext wird hier unterhalb des Balkens angezeigt -->
-        <span id="progressText">0 / 6 erledigt</span>
-      </div>
-    </aside>
+    <div class="page">
+        <!-- Sidebar: Enthält Logo, Navigation und Fortschrittsanzeige -->
+        <aside class="sidebar">
+            <h1 class="logo">Kurs</h1>
+            <nav>
+                <ul>
+                    <!-- Navigationseinträge -->
+                    <li class="active">home</li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="glossar.html">Glossar</a></li>
+                    <li><a href="Karteikarten.html">Karteikarten</a></li>
+                </ul>
+            </nav>
+            <!-- Fortschrittsanzeige in der Sidebar -->
+            <div class="progress-wrap">
+                <div id="progressBar"></div>
+                <!-- Der Fortschrittstext wird hier unterhalb des Balkens angezeigt -->
+                <span id="progressText">0 / 6 erledigt</span>
+            </div>
+        </aside>
 
-    <!-- Hauptbereich: Enthält den Content der Seite -->
-    <main class="content">
-      <!-- Header-Bereich -->
-      <header class="content-header">
-        <h1>Unternehmensbewertung und wertorientierte Unternehmensführung (FHK BWLM 13 S25)</h1>
-      </header>
+        <!-- Hauptbereich: Enthält den Content der Seite -->
+        <main class="content">
+            <!-- Header-Bereich -->
+            <header class="content-header">
+                <h1>Unternehmensbewertung und wertorientierte Unternehmensführung (FHK BWLM 13 S25)</h1>
+            </header>
 
-      <!-- Einleitung zur Develop-Aufgabe -->
-      <h2>Develop-Aufgabe 7</h2>
-      <p>Student: Lutz Schubbert</p>
-      <p>Präsentationsdatum: 10.6.2025</p>
-      
-      <!-- Aufgabenbeschreibung -->
-      <h2>Aufgabe</h2>
-      <p>Leiten Sie den aktuell gültigen Basiszinssatz nach den Empfehlungen des IDW her. (vgl. Skript S. 194)</p>
+            <!-- Einleitung zur Develop-Aufgabe -->
+            <h2>Develop-Aufgabe 7</h2>
+            <p>Student: Lutz Schubbert</p>
+            <p>Präsentationsdatum: 10.6.2025</p>
 
-      <!-- Beschreibung des Vorgehens -->
-      <h2>Vorgehen zur Bearbeitung der Develop-Aufgabe Nr. 7</h2>
-      <!-- Um Listeneinträge korrekt darzustellen, verwenden wir hier ein ungeordnetes Listen-Element -->
-      <p>Um die Aufgabe zu bearbeiten nutze ich folgende technische Infrastruktur:</p>
-      <ul>
-        <li>Github zur Ablage der relevanten Dateien und Codes</li>
-        <li>Visual Studio Code als Entwicklungsumgebung (IDE)</li>
-        <li>ChatGPT als inhaltlichen Sparringspartner und zur effizienten Code-Entwicklung innerhalb von VSC</li>
-      </ul>
-
-      <!-- Aufgabenbereich: Liste der Aufgaben -->
-      <section class="tasks">
-        <!-- Aufgabe 1 -->
-        <article class="task" data-task="1">
-          <!-- Badge zeigt die Aufgabennummer -->
-          <span class="badge">1</span>
-          <div class="task-body">
-            <h3>SVENSSON Parameter von der Bundesbank besorgen</h3>
-            <p>Besorgen Sie sich die Parameter des Svensson-Modells von der Internetpräsenz 
-              der Deutschen Bundesbank. Nutzen Sie die Zeitreihe der letzten drei Monate bzw. 60 Tage.</p>
-          </div>
-        </article>
-
-        <!-- Aufgabe 2 -->
-        <article class="task" data-task="2">
-          <span class="badge">2</span>
-          <div class="task-body">
-            <h3>Berechnung der Zinsstrukturkurve</h3>
-            <p>Berechnen Sie mittels der Parameter für alle 60 Tage jeweils die gültigen Zinssätze 
-              für die Laufzeiten von einem Jahr bis 250 Jahre.</p>
-          </div>
-        </article>
-
-        <!-- Aufgabe 3 -->
-        <article class="task" data-task="3">
-          <span class="badge">3</span>
-          <div class="task-body">
-            <h3>Mittelwertberechnung der Zinsstrukturkurve</h3>
-            <p>Errechnen Sie den Mittelwert der Zinssätze für jede Laufzeit von einem Jahr bis 250 Jahre.</p>
-          </div>
-        </article>
-
-        <!-- Aufgabe 4 -->
-        <article class="task" data-task="4">
-          <span class="badge">4</span>
-          <div class="task-body">
-            <h3>Umrechnung von stetig zu diskreten Renditen</h3>
-            <p>KRechnen Sie den Zinssatz jeder Laufzeit von stetigen in diskrete Renditen um.</p>
-          </div>
-        </article>
-
-        <!-- Aufgabe 5 -->
-        <article class="task" data-task="5">
-          <span class="badge">5</span>
-          <div class="task-body">
-            <h3>Grafische Darstellung (?)</h3>
-            <p>Stellen Sie die Kurve grafisch dar.</p>
-          </div>
-        </article>
-
-        <!-- Aufgabe 6 -->
-        <article class="task" data-task="6">
-          <span class="badge">6</span>
-          <div class="task-body">
-            <h3>Laufzeitunabhängiger Zinssatz (IDW)</h3>
-            <p>Rechnen Sie die Laufzeiten der IDW-Empfehlung folgend in einen laufzeitunabhängigen Basiszinssatz um.</p>
-          </div>
-        </article>
-      </section>
-
-      <!-- Extra-Bereiche: Diese Sektionen enthalten zusätzliche, aufklappbare Informationen zu den Aufgaben -->
-      <!-- Jeder Bereich ist für eine Aufgabe vorgesehen. Beim Klick auf die Überschrift wird der Inhalt umgeschaltet. -->
-
-      <!-- Information zu Aufgabe 1 -->
-      <section class="extra-section">
-        <h2 class="collapsible-header" style="cursor: pointer; text-align: left;">
-          <span class="circle-number">1</span>
-          Informationen zur 1. Aufgabe
-        </h2>
-        <div class="collapsible-body" style="display: none; padding: 0.5rem; background: #f9f9f9; border-top: 1px solid #ddd;">
-          <section>
-            <h2>Mein Vorgehen</h2>
-            <p>Ich habe die Website der Deutschen Bundesbank besucht und dort die offiziellen Parameter des Svensson-Modells recherchiert und heruntergeladen.</p>
-            <p>Die von mir genutzte Quelle lautet:<br>
-              👉 <a href="https://www.bundesbank.de/de/statistiken/zeitreihen-datenbanken" target="_blank">https://www.bundesbank.de/de/statistiken/zeitreihen-datenbanken</a>
+            <!-- Aufgabenbeschreibung -->
+            <h2>Aufgabe</h2>
+            <p>
+                Leiten Sie den aktuell gültigen Basiszinssatz nach den Empfehlungen des IDW her.
+                (vgl. Skript S. 194)
             </p>
-            <p>Dort habe ich im Bereich <strong>"Zinsstrukturkurven / Svensson-Parameter"</strong> die entsprechenden Zeitreihen-Daten für die vergangenen <strong>60 Börsentage</strong> (Zeitraum ca. 3 Monate) identifiziert und als CSV-Dateien heruntergeladen.</p>
-            
-            <h3>Die verwendeten Dateien:</h3>
+
+            <!-- Beschreibung des Vorgehens -->
+            <h2>Vorgehen zur Bearbeitung der Develop-Aufgabe Nr. 7</h2>
+            <p>Um die Aufgabe zu bearbeiten nutze ich folgende technische Infrastruktur:</p>
             <ul>
-              <li>BBK01.WZ9810 : Parameter Beta0</li>
-              <li>BBK01.WZ9811 : Parameter Beta1</li>
-              <li>BBK01.WZ9812 : Parameter Beta2</li>
-              <li>BBK01.WZ9813 : Parameter Beta3</li>
-              <li>BBK01.WZ9814 : Parameter Lambda1</li>
-              <li>BBK01.WZ9815 : Parameter Lambda2</li>
+                <li>Github zur Ablage der relevanten Dateien und Codes</li>
+                <li>Visual Studio Code als Entwicklungsumgebung (IDE)</li>
+                <li>ChatGPT als inhaltlichen Sparringspartner und zur effizienten Code-Entwicklung innerhalb von VSC</li>
             </ul>
-            <p><em>(Optional: Hier könnte ein Screenshot der Download-Seite eingefügt werden.)</em></p>
-            
-            <h3>Datenverarbeitung:</h3>
-            <p>Zur systematischen Weiterverarbeitung der Daten habe ich ein R-Skript entwickelt, das:</p>
-            <ol>
-              <li>die heruntergeladenen Dateien automatisiert einliest,</li>
-              <li>die Parameterwerte für alle 60 Börsentage extrahiert und zusammenführt,</li>
-              <li>die Daten aufbereitet und in einer übersichtlichen Tabelle speichert.</li>
-            </ol>
-            
-            <p>Ergebnis ist die Datei:<br>
-              👉 <strong>svensson_parameters_prepared.csv</strong>
-            </p>
-            
-            <p>Diese Datei enthält für jeden der 60 Börsentage eine kommentierte Übersichtstabelle mit den Parametern β₀, β₁, β₂, β₃, λ₁, λ₂.</p>
-            
-            <h3>Beispielhafte Struktur der Übersichtstabelle:</h3>
-            <table border="1" cellpadding="5" cellspacing="0">
-              <thead>
-                <tr>
-                  <th>Datum</th>
-                  <th>Beta0</th>
-                  <th>Beta1</th>
-                  <th>Beta2</th>
-                  <th>Beta3</th>
-                  <th>Lambda1</th>
-                  <th>Lambda2</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>2025-03-01</td>
-                  <td>0.0173</td>
-                  <td>-0.011</td>
-                  <td>0.0025</td>
-                  <td>-0.0007</td>
-                  <td>2.5600</td>
-                  <td>9.8000</td>
-                </tr>
-                <tr>
-                  <td>2025-03-02</td>
-                  <td>0.0174</td>
-                  <td>-0.010</td>
-                  <td>0.0026</td>
-                  <td>-0.0008</td>
-                  <td>2.5700</td>
-                  <td>9.7500</td>
-                </tr>
-                <tr>
-                  <td>...</td>
-                  <td>...</td>
-                  <td>...</td>
-                  <td>...</td>
-                  <td>...</td>
-                  <td>...</td>
-                  <td>...</td>
-                </tr>
-              </tbody>
-            </table>
-            
-            <h3>Zusammenfassung:</h3>
-            <p>Damit sind die <strong>Svensson-Parameter</strong> für die vergangenen <strong>60 Börsentage</strong> (ca. 3 Monate) vollständig erfasst und vorbereitet.<br>
-            Sie bilden die Datenbasis für die weiteren Berechnungen der Zinssätze im nächsten Schritt der Aufgabe.</p>
-          </section>
-                  </div>
-      </section>
 
-      <!-- Information zu Aufgabe 2 -->
-      <section class="extra-section">
-        <h2 class="collapsible-header" style="cursor: pointer; text-align: left;">
-           <span class="circle-number">2</span>
-           Informationen zur 2. Aufgabe
-        </h2>
-        <div class="collapsible-body" style="display: none; padding: 0.5rem; background: #f9f9f9; border-top: 1px solid #ddd;">
-          <p>Zusätzliche Hinweise oder Erläuterungen zur 2. Aufgabe.</p>
-        </div>
-      </section>
+            <!-- Aufgabenbereich: Liste der Aufgaben -->
+            <section class="tasks">
+                <!-- Aufgabe 1 -->
+                <article class="task" data-task="1">
+                    <span class="badge">1</span>
+                    <div class="task-body">
+                        <h3>SVENSSON Parameter von der Bundesbank besorgen</h3>
+                        <p>
+                            Besorgen Sie sich die Parameter des Svensson-Modells von der Internetpräsenz 
+                            der Deutschen Bundesbank. Nutzen Sie die Zeitreihe der letzten drei Monate bzw. 60 Tage.
+                        </p>
+                    </div>
+                </article>
 
-      <!-- Information zu Aufgabe 3 -->
-      <section class="extra-section">
-        <h2 class="collapsible-header" style="cursor: pointer; text-align: left;">
-           <span class="circle-number">3</span>
-           Informationen zur 3. Aufgabe
-        </h2>
-        <div class="collapsible-body" style="display: none; padding: 0.5rem; background: #f9f9f9; border-top: 1px solid #ddd;">
-          <p>Weitere Informationen zur 3. Aufgabe finden Sie hier.</p>
-        </div>
-      </section>
+                <!-- Aufgabe 2 -->
+                <article class="task" data-task="2">
+                    <span class="badge">2</span>
+                    <div class="task-body">
+                        <h3>Berechnung der Zinsstrukturkurve</h3>
+                        <p>
+                            Berechnen Sie mittels der Parameter für alle 60 Tage jeweils die gültigen Zinssätze 
+                            für die Laufzeiten von einem Jahr bis 250 Jahre.
+                        </p>
+                    </div>
+                </article>
 
-      <!-- Information zu Aufgabe 4 -->
-      <section class="extra-section">
-        <h2 class="collapsible-header" style="cursor: pointer; text-align: left;">
-           <span class="circle-number">4</span>
-           Informationen zur 4. Aufgabe
-        </h2>
-        <div class="collapsible-body" style="display: none; padding: 0.5rem; background: #f9f9f9; border-top: 1px solid #ddd;">
-          <p>Hier erhalten Sie zusätzliche Erläuterungen zur 4. Aufgabe.</p>
-        </div>
-      </section>
+                <!-- Aufgabe 3 -->
+                <article class="task" data-task="3">
+                    <span class="badge">3</span>
+                    <div class="task-body">
+                        <h3>Mittelwertberechnung der Zinsstrukturkurve</h3>
+                        <p>
+                          Errechnen Sie den Mittelwert der Zinssätze für jede Laufzeit von einem Jahr bis 250 Jahre.
+                        </p>
+                    </div>
+                </article>
 
-      <!-- Information zu Aufgabe 5 -->
-      <section class="extra-section">
-        <h2 class="collapsible-header" style="cursor: pointer; text-align: left;">
-           <span class="circle-number">5</span>
-           Informationen zur 5. Aufgabe
-        </h2>
-        <div class="collapsible-body" style="display: none; padding: 0.5rem; background: #f9f9f9; border-top: 1px solid #ddd;">
-          <p>Zusätzlicher Kontext und Hinweise zur 5. Aufgabe.</p>
-        </div>
-      </section>
+                <!-- Aufgabe 4 -->
+                <article class="task" data-task="4">
+                    <span class="badge">4</span>
+                    <div class="task-body">
+                        <h3>Diskrete Renditen der Zinsstrukturkurve</h3>
+                        <p>
+                          Rechnen Sie den Zinssatz jeder Laufzeit von stetigen in diskrete Renditen um.
+                        </p>
+                    </div>
+                </article>
 
-      <!-- Information zu Aufgabe 6 -->
-      <section class="extra-section">
-        <h2 class="collapsible-header" style="cursor: pointer; text-align: left;">
-           <span class="circle-number">6</span>
-           Informationen zur 6. Aufgabe
-        </h2>
-        <div class="collapsible-body" style="display: none; padding: 0.5rem; background: #f9f9f9; border-top: 1px solid #ddd;">
-          <p>Erläuterungen zur Bearbeitung der 6. Aufgabe finden Sie hier.</p>
-        </div>
-      </section>
-    </main>
-  </div>
+                <!-- Aufgabe 5 -->
+                <article class="task" data-task="5">
+                    <span class="badge">5</span>
+                    <div class="task-body">
+                        <h3>Grafische Darstellung der Zinsstrukturkurve</h3>
+                        <p>
+                          Stellen Sie die Kurve grafisch dar.
+                        </p>
+                    </div>
+                </article>
 
-  <!-- Einbindung der JavaScript-Datei, die u.a. das Toggle-Verhalten der aufklappbaren Bereiche implementiert -->
-  <script src="app.js"></script>
+                <!-- Aufgabe 6 -->
+                <article class="task" data-task="6">
+                    <span class="badge">6</span>
+                    <div class="task-body">
+                        <h3>Laufzeitunabhängiger Basiszinssatz (IDW)</h3>
+                        <p>
+                          Rechnen Sie die Laufzeiten der IDW-Empfehlung folgend in einen 
+                          <strong>laufzeitunabhängigen Basiszinssatz</strong> um.
+                        </p>
+                    </div>
+                </article>
+            </section>
+
+            <!-- Extra-Bereiche: Diese Sektionen enthalten zusätzliche, aufklappbare Informationen zu den Aufgaben -->
+            <!-- Jeder Bereich ist für eine Aufgabe vorgesehen. Beim Klick auf die Überschrift wird der Inhalt umgeschaltet. -->
+
+            <!-- Information zu Aufgabe 1 -->
+            <section class="extra-section">
+                <h2 class="collapsible-header" style="cursor: pointer; text-align: left;">
+                    <span class="circle-number">1</span>
+                    Informationen zur 1. Aufgabe: SVENSSON Parameter
+                </h2>
+                <div class="collapsible-body" style="display: none; padding: 0.5rem; background: #f9f9f9; border-top: 1px solid #ddd;">
+                    <section>
+                        <h2>Vorgehen: Datenrecherche und -aufbereitung</h2>
+                        <h3>1️⃣ Suche nach den Daten</h3>
+                        <p>
+                            Im ersten Schritt habe ich gezielt nach den offiziellen Svensson-Parametern gesucht, 
+                            die von der Deutschen Bundesbank veröffentlicht werden. Nach Durchsicht der verschiedenen 
+                            Datenbereiche bin ich auf die folgende Seite gestoßen:
+                        </p>
+                        <p>
+                            👉 <a href="https://www.bundesbank.de/de/statistiken/geld-und-kapitalmaerkte/zinssaetze-und-renditen/taegliche-zinsstruktur-fuer-boersennotierte-bundeswertpapiere-650724" target="_blank">
+                                https://www.bundesbank.de/de/statistiken/geld-und-kapitalmaerkte/zinssaetze-und-renditen/taegliche-zinsstruktur-fuer-boersennotierte-bundeswertpapiere-650724
+                            </a>
+                        </p>
+                        <h3>2️⃣ Identifikation der richtigen Dateien</h3>
+                        <p>
+                            Auf dieser Seite habe ich im Abschnitt <strong>"Zinsstrukturkurven / Svensson-Parameter"</strong> 
+                            die relevanten Zeitreihen identifiziert, die für die Berechnung des Basiszinssatzes gemäß IDW-Empfehlung erforderlich sind.
+                        </p>
+                        <p>Die heruntergeladenen Parameter-Dateien sind:</p>
+                        <ul>
+                            <li>BBK01.WZ9810 : Parameter Beta0</li>
+                            <li>BBK01.WZ9811 : Parameter Beta1</li>
+                            <li>BBK01.WZ9812 : Parameter Beta2</li>
+                            <li>BBK01.WZ9813 : Parameter Beta3</li>
+                            <li>BBK01.WZ9814 : Parameter Lambda1</li>
+                            <li>BBK01.WZ9815 : Parameter Lambda2</li>
+                        </ul>
+                        <p><em>Screenshot der Website zur Veranschaulichung:</em></p>
+                        <p>
+                            <img src="images/bundesbank_screenshot.png" alt="Screenshot der Bundesbank-Website" style="max-width: 30%; height: auto;">
+                        </p>
+                        <h3>3️⃣ Erkunden der Datenstruktur</h3>
+                        <p>
+                            Im Anschluss habe ich die heruntergeladenen CSV-Dateien analysiert, um die interne Struktur der Daten zu verstehen.
+                            Damit war die Grundlage geschaffen für die anschließende automatisierte Datenverarbeitung mittels R-Skript.
+                        </p>
+                    </section>
+                </div>
+            </section>
+
+            <!-- Information zu Aufgabe 2 -->
+            <section class="extra-section">
+                <h2 class="collapsible-header" style="cursor: pointer; text-align: left;">
+                    <span class="circle-number">2</span>
+                    Informationen zur 2. Aufgabe: Berechnung der Zinsstrukturkurve
+                </h2>
+                <div class="collapsible-body" style="display: none; padding: 0.5rem; background: #f9f9f9; border-top: 1px solid #ddd;">
+                    <h3>Technisches Vorgehen und Entscheidung für R</h3>
+                    <p>
+                        Um diese Aufgabe fundiert zu bearbeiten, habe ich mir zunächst ein vertiefteres Verständnis der zugrunde liegenden Daten verschafft.
+                    </p>
+                    <p>
+                        Nach kurzer Überlegung habe ich mich bewusst dagegen entschieden, die Aufgabe in <strong>Excel</strong> oder <strong>Numbers</strong> zu bearbeiten, und stattdessen auf die Programmiersprache <strong>R</strong> gesetzt.
+                    </p>
+                    <p>
+                        Bereits in früheren Projekten habe ich umfangreiche Erfahrungen mit <strong>R</strong> gesammelt und – wie in der Einleitung beschrieben – konnte ich als <em>Vibe-Coder</em> zunehmend erleben, wie mächtig es sein kann, eigene Ideen durch <strong>Code und KI-Unterstützung</strong> umzusetzen.
+                    </p>
+                    <h3>Datenaufbereitung</h3>
+                    <p>
+                        Im ersten Schritt habe ich die heruntergeladenen Dateien weiter analysiert und gezielt für diese Aufgabe aufbereitet.
+                    </p>
+                    <p>
+                        Ich habe dazu eine eigene <strong>Excel-Tabelle</strong> erstellt, in der die <strong>letzten 60 Handelstage</strong> (Börsentage) zusammengefasst sind.
+                        Diese Tabelle diente als strukturierter Ausgangspunkt für die weitere Verarbeitung.
+                    </p>
+                    <h3>Entwicklung einer interaktiven Shiny App</h3>
+                    <p>
+                        Darauf aufbauend habe ich mit <strong>R-Code</strong> eine eigene <strong>Shiny App</strong> entwickelt.
+                    </p>
+                    <p>
+                        Diese App visualisiert die letzten 60 Handelstage und stellt die berechneten Zinssätze interaktiv dar.
+                    </p>
+                    <div style="margin: 1rem 0; border: 1px solid #ccc; border-radius: 5px; overflow: hidden;">
+                        <iframe src="https://lg98bn-lutz-schubbert.shinyapps.io/shiny_app/" width="100%" height="600" style="border: none;"></iframe>
+                    </div>
+                    <h3>Formel des Svensson-Modells</h3>
+                    <p>
+                        Die zugrunde liegende Berechnung basiert auf folgender Formel des Svensson-Modells:
+                    </p>
+                    <p style="font-family: monospace; background-color: #f0f0f0; padding: 0.5rem; border-radius: 5px;">
+                        r(t) = β₀ + β₁ * ((1 - exp(-t / λ₁)) / (t / λ₁)) + β₂ * (((1 - exp(-t / λ₁)) / (t / λ₁)) - exp(-t / λ₁)) + β₃ * (((1 - exp(-t / λ₂)) / (t / λ₂)) - exp(-t / λ₂))
+                    </p>
+                    <p>
+                        Damit können für jede gewünschte Laufzeit t (in Jahren) die entsprechenden Zinssätze berechnet und visualisiert werden.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Information zu Aufgabe 3 -->
+            <section class="extra-section">
+                <h2 class="collapsible-header" style="cursor: pointer; text-align: left;">
+                    <span class="circle-number">3</span>
+                    Informationen zur 3. Aufgabe: Mittelwertberechnung der Zinsstrukturkurve
+                </h2>
+                <div class="collapsible-body" style="display: none; padding: 0.5rem; background: #f9f9f9; border-top: 1px solid #ddd;">
+                    <h3>Mittelwertberechnung der Zinsstrukturkurve</h3>
+                    <p>
+                        In dieser Aufgabe sollte der <strong>Mittelwert der Zinssätze</strong> für jede <strong>Laufzeit von 1 Jahr bis 250 Jahre</strong> berechnet werden.
+                    </p>
+                    <h4>Vorgehen</h4>
+                    <p>
+                        Ausgangspunkt war der Datensatz <code>yields_long</code>, der für jede <strong>Laufzeit</strong> und jeden <strong>Handelstag</strong> die zugehörigen <strong>stetig verzinsten Zinssätze</strong> enthält.
+                    </p>
+                    <p>
+                        Um den Mittelwert der Zinssätze je Laufzeit zu berechnen, wurde der Datensatz nach der Spalte <code>Laufzeit</code> gruppiert. Für jede Gruppe wurde anschließend der <strong>arithmetische Mittelwert</strong> der Zinssätze berechnet.
+                    </p>
+                    <p>
+                        NA-Werte wurden bei der Berechnung ausgeschlossen.
+                    </p>
+                    <h4>Formel</h4>
+                    <p>
+                        Die Berechnung des Mittelwertes für jede Laufzeit L erfolgte nach folgender Formel:
+                    </p>
+                    <p style="font-family: monospace; background-color: #f0f0f0; padding: 0.5rem; border-radius: 5px;">
+                        mean_yield(L) = (1 / N<sub>L</sub>) * Σ [ r<sub>i</sub>(L) ]<br>
+                        wobei:<br>
+                        N<sub>L</sub> = Anzahl der verfügbaren Handelstage für Laufzeit L<br>
+                        r<sub>i</sub>(L) = Zinssatz am i-ten Tag für Laufzeit L
+                    </p>
+                    <h4>Zusammenfassung</h4>
+                    <p>
+                        Durch diese Berechnung ergibt sich für jede Laufzeit zwischen <strong>1 und 250 Jahren</strong> genau ein <strong>durchschnittlicher Zinssatz</strong>, der als Grundlage für weitere Analysen und Vergleiche dient.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Information zu Aufgabe 4 -->
+            <section class="extra-section">
+                <h2 class="collapsible-header" style="cursor: pointer; text-align: left;">
+                    <span class="circle-number">4</span>
+                    Informationen zur 4. Aufgabe: Diskrete Renditen der Zinsstrukturkurve
+                </h2>
+                <div class="collapsible-body" style="display: none; padding: 0.5rem; background: #f9f9f9; border-top: 1px solid #ddd;">
+                    <p>
+                      In dieser Aufgabe sollte der Zinssatz von stetig in diskret umgerechnet werden.
+                    </p>
+                    <h4>Vorgehen</h4>
+                    <p>
+                        Ausgangspunkt war der Datensatz <code>yields_long</code>, der für jede 
+                        <strong>Laufzeit</strong> und jeden <strong>Handelstag</strong> die zugehörigen 
+                        <strong>stetig verzinsten Zinssätze</strong> enthält.
+                    </p>
+                    <p>
+                        Um den Mittelwert der Zinssätze je Laufzeit zu berechnen, wurde der Datensatz 
+                        nach der Spalte <code>Laufzeit</code> gruppiert. Für jede Gruppe wurde anschließend 
+                        der <strong>arithmetische Mittelwert</strong> der Zinssätze berechnet. NA-Werte wurden 
+                        bei der Berechnung ausgeschlossen.
+                    </p>
+                    <h4>Formel</h4>
+                    <p style="font-family: monospace; background-color: #f0f0f0; padding: 0.5rem; border-radius: 5px;">
+                        mean_yield(L) = (1 / N<sub>L</sub>) * Σ [ r<sub>i</sub>(L) ]<br>
+                        wobei:<br>
+                        N<sub>L</sub> = Anzahl der verfügbaren Handelstage für Laufzeit L<br>
+                        r<sub>i</sub>(L) = Zinssatz am i-ten Tag für Laufzeit L
+                    </p>
+                    <h4>Zusammenfassung</h4>
+                    <p>
+                        Durch diese Berechnung ergibt sich für jede Laufzeit zwischen <strong>1 und 250 Jahren</strong> 
+                        genau ein <strong>durchschnittlicher Zinssatz</strong>, der als Grundlage für weitere Analysen dient.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Information zu Aufgabe 5 -->
+            <section class="extra-section">
+                <h2 class="collapsible-header" style="cursor: pointer; text-align: left;">
+                    <span class="circle-number">5</span>
+                    Informationen zur 5. Aufgabe: Grafische Darstellung der Zinsstrukturkurve
+                </h2>
+                <div class="collapsible-body" style="display: none; padding: 0.5rem; background: #f9f9f9; border-top: 1px solid #ddd;">
+                    <h3>Grafische Darstellung der Zinsstrukturkurve</h3>
+                    <p>
+                        In dieser Aufgabe sollte die <strong>Zinsstrukturkurve</strong> für die 
+                        betrachteten Laufzeiten <strong>grafisch dargestellt</strong> werden.
+                    </p>
+                    <h4>Vorgehen</h4>
+                    <p>
+                        Grundlage für die Darstellung waren die zuvor berechneten <strong>diskreten 
+                        Renditen</strong> (<code>disc_yields</code>) aus Aufgabe 4. Für jede 
+                        <strong>Laufzeit von 1 bis 250 Jahren</strong> wurde der zugehörige durchschnittliche 
+                        <strong>diskrete Zinssatz</strong> visualisiert.
+                    </p>
+                    <p>
+                        Zur besseren Lesbarkeit wurde die erzeugte Grafik als <strong>PNG-Datei</strong> gespeichert und in das Projektverzeichnis eingebunden.
+                    </p>
+                    <h4>Ergebnis</h4>
+                    <p>
+                        Die folgende Abbildung zeigt die resultierende <strong>grafische Darstellung der 
+                        diskreten Renditen</strong>:
+                    </p>
+                    <p style="text-align: center;">
+                        <img src="images/grafische_Darstellung_diskreter_Renditen.png" alt="Grafische Darstellung der diskreten Renditen" style="max-width: 60%; height: auto; border: 1px solid #ccc; border-radius: 5px;">
+                    </p>
+                    <h4>Zusammenfassung</h4>
+                    <p>
+                        Die Grafik zeigt den Verlauf der <strong>diskreten Zinssätze</strong> über die 
+                        unterschiedlichen <strong>Laufzeiten</strong> hinweg und ergänzt die numerische Auswertung um eine visuelle Komponente.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Information zu Aufgabe 6 -->
+            <section class="extra-section">
+              <h2 class="collapsible-header" style="cursor: pointer; text-align: left;">
+                <span class="circle-number">6</span>
+                Informationen zur 6. Aufgabe: Laufzeitunabhängiger Basiszinssatz (IDW)
+              </h2>
+              <div class="collapsible-body" style="display: none; padding: 0.5rem; background: #f9f9f9; border-top: 1px solid #ddd;">
+                <h3>Laufzeitunabhängiger Basiszinssatz (IDW)</h3>
+                <p>
+                  In dieser Aufgabe sollte gemäß der <strong>IDW-Empfehlung</strong> ein 
+                  <strong>laufzeitunabhängiger Basiszinssatz</strong> berechnet werden.
+                </p>
+                <h4>Vorgehen</h4>
+                <p>
+                  Ausgangspunkt war der Datensatz <code>yields_long</code>, der für jede 
+                  <strong>Laufzeit</strong> und jeden <strong>Handelstag</strong> die 
+                  <strong>stetig verzinsten Zinssätze</strong> enthält.
+                </p>
+                <p>
+                  Gemäß der IDW-Empfehlung wurde für jeden <strong>Handelstag</strong> ein 
+                  <strong>durchschnittlicher Zinssatz über alle betrachteten Laufzeiten (1 bis 250 Jahre)</strong> berechnet. Hierzu wurden die Zinssätze 
+                  für alle Laufzeiten eines Tages arithmetisch gemittelt. Das Ergebnis ist ein 
+                  <strong>laufzeitunabhängiger Basiszinssatz</strong> pro Handelstag.
+                </p>
+                <p>
+                  Die berechneten Werte wurden in einer eigenen Excel-Datei gespeichert und stehen 
+                  für weitere Anwendungen zur Verfügung.
+                </p>
+                <h4>Formel</h4>
+                <p style="font-family: monospace; background-color: #f0f0f0; padding: 0.5rem; border-radius: 5px;">
+                  Basiszinssatz(Datum) = (1 / N<sub>Laufzeiten</sub>) * Σ [ r<sub>j</sub> ]<br>
+                  wobei:<br>
+                  N<sub>Laufzeiten</sub> = Anzahl der betrachteten Laufzeiten (1 bis 250 Jahre)<br>
+                  r<sub>j</sub> = Zinssatz für die j-te Laufzeit an diesem Datum
+                </p>
+                <h4>Ergebnis (grafische Darstellung)</h4>
+                <p>
+                    Die folgende Abbildung zeigt den Verlauf des <strong>laufzeitunabhängigen Basiszinssatzes</strong> über die betrachteten <strong>60 Handelstage</strong>:
+                </p>
+                <p style="text-align: center;">
+                    <img src="images/basiszinssatz_verlauf.png" alt="Verlauf des Basiszinssatzes" style="max-width: 60%; height: auto; border: 1px solid #ccc; border-radius: 5px;">
+                </p>
+                
+
+
+                <h4>Zusammenfassung</h4>
+                <p>
+                  Mit diesem Vorgehen wird für jeden <strong>Handelstag</strong> ein 
+                  <strong>laufzeitunabhängiger Basiszinssatz</strong> ermittelt. Dieser Wert dient in der 
+                  <strong>Unternehmensbewertung</strong> als wesentlicher Parameter für die Diskontierung 
+                  zukünftiger Zahlungsströme und bildet einen zentralen Bestandteil der weiteren Analysen.
+                </p>
+              </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Einbindung der JavaScript-Datei, die unter anderem das Toggle-Verhalten der aufklappbaren Bereiche implementiert -->
+    <script src="app.js"></script>
 </body>
 </html>

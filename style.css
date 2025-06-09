@@ -34,13 +34,19 @@ body {
 .page {
   display: flex;
   min-height: 100vh;
+  margin-left: 240px;  /* Abstand zur fixierten Sidebar anpassen */
 }
 
 /* =======================================================================
    Sidebar – Linker Menübereich
    ======================================================================= */
 .sidebar {
-  width: 240px;                        /* Feste Breite der Sidebar */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 220px;  /* oder eine andere gewünschte Breite */
+  height: 100%;
+  overflow-y: auto;  /* Bei Bedarf, damit der Inhalt scrollbar bleibt */
   background: #fff;
   border-right: 1px solid #e4e7ea;
   padding: var(--gap);

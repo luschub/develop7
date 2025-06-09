@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>FAQ – Svensson-Zinsstrukturkurve & Basiszinssatz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page">
+    <aside class="sidebar">
+        <h1 class="logo">Kurs</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="glossar.html">Glossar</a></li>
+                <li><a href="Karteikarten.html">Karteikarten</a></li>
+                
+            </ul>
+        </nav>
+        <div class="progress-wrap">
+            <div id="progressBar"></div>
+            <span id="progressText">0 / 6 erledigt</span>
+        </div>
+    </aside>
+
+    <main class="content">
+        <header class="content-header">
+            <h1>FAQ: Svensson-Zinsstrukturkurve & Basiszinssatz nach IDW</h1>
+        </header>
+
+        <section class="faq">
+            <article class="faq-item">
+                <h2>Was ist die Svensson-Zinsstrukturkurve?</h2>
+                <p>
+                    Die Svensson-Zinsstrukturkurve ist ein mathematisches Modell zur Beschreibung des Zusammenhangs zwischen Zinssätzen und Laufzeiten. Sie erweitert das Nelson-Siegel-Modell um zusätzliche Parameter, um komplexere Kurvenverläufe (z.B. Buckel) abzubilden.
+                </p>
+            </article>
+
+            <article class="faq-item">
+                <h2>Welche Parameter werden im Svensson-Modell verwendet?</h2>
+                <p>
+                    Das Modell nutzt sechs Parameter:<br>
+                    – β₀, β₁, β₂, β₃ (Steuerung von Niveau, Steigung und Krümmung der Kurve)<br>
+                    – λ₁, λ₂ (Steuerung der Lage und Form der exponentiellen Komponenten).
+                </p>
+            </article>
+
+            <article class="faq-item">
+                <h2>Wie lautet die Formel der Svensson-Zinsstrukturkurve?</h2>
+                <p>
+                    <code>
+                    r(t) = β₀ + β₁ * ((1 - exp(-t / λ₁)) / (t / λ₁)) + β₂ * (((1 - exp(-t / λ₁)) / (t / λ₁)) - exp(-t / λ₁)) + β₃ * (((1 - exp(-t / λ₂)) / (t / λ₂)) - exp(-t / λ₂))
+                    </code>
+                    <br>
+                    wobei <strong>t</strong> die Laufzeit in Jahren ist.
+                </p>
+            </article>
+
+            <article class="faq-item">
+                <h2>Wo finde ich die aktuellen Svensson-Parameter?</h2>
+                <p>
+                    Die Deutsche Bundesbank veröffentlicht die tagesaktuellen Svensson-Parameter auf ihrer Website im Bereich „Zinsstrukturkurven / Svensson-Parameter“.
+                </p>
+            </article>
+
+            <article class="faq-item">
+                <h2>Wie berechnet man Zinssätze für verschiedene Laufzeiten?</h2>
+                <p>
+                    Mit den aktuellen Svensson-Parametern können für jede gewünschte Laufzeit Zinssätze berechnet werden, indem man die Parameter in die oben genannte Formel einsetzt.
+                </p>
+            </article>
+
+            <article class="faq-item">
+                <h2>Wie wird der Mittelwert der Zinssätze je Laufzeit berechnet?</h2>
+                <p>
+                    Für jede Laufzeit (z.B. 1 bis 250 Jahre) wird der arithmetische Mittelwert der Zinssätze über den betrachteten Zeitraum (z.B. 60 Tage) gebildet.
+                </p>
+            </article>
+
+            <article class="faq-item">
+                <h2>Wie erfolgt die Umrechnung von stetigen in diskrete Zinssätze?</h2>
+                <p>
+                    Der stetige Zinssatz <code>r</code> wird nach folgender Formel in einen äquivalenten diskreten Jahreszinssatz <code>i</code> umgerechnet:<br>
+                    <code>i = e<sup>r</sup> - 1</code>
+                </p>
+            </article>
+
+            <article class="faq-item">
+                <h2>Wie wird der laufzeitunabhängige Basiszinssatz nach IDW berechnet?</h2>
+                <p>
+                    Gemäß IDW-Empfehlung wird für jeden Tag der arithmetische Mittelwert der Zinssätze über alle betrachteten Laufzeiten (z.B. 1 bis 250 Jahre) gebildet. Daraus ergibt sich ein laufzeitunabhängiger Basiszinssatz pro Tag.
+                </p>
+            </article>
+
+            <article class="faq-item">
+                <h2>Wofür wird der Basiszinssatz in der Unternehmensbewertung benötigt?</h2>
+                <p>
+                    Der Basiszinssatz dient als Diskontierungszinssatz für zukünftige Zahlungsströme und bildet einen zentralen Bestandteil der Unternehmensbewertung nach IDW S1.
+                </p>
+            </article>
+
+            <article class="faq-item">
+                <h2>Wie kann die Zinsstrukturkurve grafisch dargestellt werden?</h2>
+                <p>
+                    Die Zinssätze für verschiedene Laufzeiten werden als Kurve (z.B. Linien- oder Punktdiagramm) visualisiert, um den Verlauf über die Zeit und Laufzeit hinweg anschaulich darzustellen.
+                </p>
+            </article>
+        </section>
+    </main>
+</div>
+</body>
+</html>
